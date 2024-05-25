@@ -10,8 +10,8 @@ class AppTheme {
     colorScheme: const ColorScheme(
         brightness: Brightness.light,
         primary: Colors.white,
-        onPrimary: Appcolors.bluePrimary,
-        secondary: Appcolors.blueSecondary,
+        onPrimary: Appcolors.redPrimary,
+        secondary: Appcolors.redSecondary,
         onSecondary: Colors.white,
         error: Appcolors.redError,
         onError: Appcolors.blackText,
@@ -29,7 +29,7 @@ class AppTheme {
               const EdgeInsets.symmetric(vertical: 15),
             ),
             backgroundColor:
-                MaterialStateProperty.all<Color>(Appcolors.bluePrimary),
+                MaterialStateProperty.all<Color>(Appcolors.redPrimary),
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
@@ -70,7 +70,7 @@ class AppTheme {
       titleSmall: TextStyle(
         fontSize: 13,
         fontWeight: FontWeight.w400,
-        color: Appcolors.blueSmallText,
+        color: Appcolors.redSecondary,
       ),
       bodySmall: TextStyle(
           fontSize: 15, color: Appcolors.greyText, fontWeight: FontWeight.w400),
@@ -80,7 +80,7 @@ class AppTheme {
           fontWeight: FontWeight.w500),
       displaySmall: TextStyle(
           fontSize: 12,
-          color: Appcolors.blueSmallText,
+          color: Appcolors.redSecondary,
           fontWeight: FontWeight.w700),
       labelSmall: TextStyle(
           fontSize: 9,
@@ -89,7 +89,7 @@ class AppTheme {
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
-      selectedItemColor: Appcolors.bluePrimary,
+      selectedItemColor: Appcolors.redPrimary,
       unselectedItemColor: Appcolors.greySmallText,
       type: BottomNavigationBarType.fixed,
       elevation: 0,
