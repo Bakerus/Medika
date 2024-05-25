@@ -33,7 +33,7 @@ class AppTheme {
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(32.0),
+                borderRadius: BorderRadius.circular(15.0),
               ),
             ))),
     textTheme: const TextTheme(

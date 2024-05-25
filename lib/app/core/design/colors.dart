@@ -19,6 +19,8 @@ class Appcolors {
   static const greyPrimary = Color.fromRGBO(161, 168, 176, 1);
   static const greyText = Color.fromRGBO(113, 119, 132, 1);
   static const greySmallText = Color.fromRGBO(173, 173, 173, 1);
+  static const greyTextfield = Color.fromRGBO(249, 250, 251, 1);
+  static const greyTextfieldStroke = Color.fromRGBO(229, 231, 235, 1);
 
   static const redError = Color.fromRGBO(255, 92, 92, 1);
 }
