@@ -19,7 +19,7 @@ class DialogCustomize extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             CircleAvatar(
-              backgroundColor: Color.fromRGBO(245, 248, 255, 1),
+              backgroundColor: const Color.fromRGBO(245, 248, 255, 1),
               radius: 30.0,
               child: Icon(
                 Icons.check,
@@ -32,7 +32,7 @@ class DialogCustomize extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 20.0,
                         fontWeight: FontWeight.w900,

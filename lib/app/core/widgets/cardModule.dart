@@ -10,7 +10,7 @@ class CardCustomized extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 12.0.hp,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -6,13 +6,19 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/onborading/bindings/onborading_binding.dart';
 import '../modules/onborading/views/onborading_view.dart';
+import '../modules/pharmax/bindings/pharmax_binding.dart';
+import '../modules/pharmax/views/pharmax_view.dart';
+import '../modules/signupPatient/bindings/signup_patient_binding.dart';
+import '../modules/signupPatient/views/signup_patient_view.dart';
+import '../modules/signupProfessionnel/bindings/signup_professionnel_binding.dart';
+import '../modules/signupProfessionnel/views/signup_professionnel_view.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.PHARMAX;
 
   static final routes = [
     GetPage(
@@ -29,6 +35,21 @@ class AppPages {
       name: _Paths.LOGIN,
       page: () => const LoginView(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.PHARMAX,
+      page: () => const PharmaxView(),
+      binding: PharmaxBinding(),
+    ),
+    GetPage(
+      name: _Paths.SIGNUP_PROFESSIONNEL,
+      page: () => const SignupProfessionnelView(),
+      binding: SignupProfessionnelBinding(),
+    ),
+    GetPage(
+      name: _Paths.SIGNUP_PATIENT,
+      page: () => const SignupPatientView(),
+      binding: SignupPatientBinding(),
     ),
   ];
 }

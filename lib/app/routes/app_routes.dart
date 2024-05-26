@@ -6,6 +6,9 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const ONBORADING = _Paths.ONBORADING;
   static const LOGIN = _Paths.LOGIN;
+  static const PHARMAX = _Paths.PHARMAX;
+  static const SIGNUP_PROFESSIONNEL = _Paths.SIGNUP_PROFESSIONNEL;
+  static const SIGNUP_PATIENT = _Paths.SIGNUP_PATIENT;
 }
 
 abstract class _Paths {
@@ -13,4 +16,7 @@ abstract class _Paths {
   static const HOME = '/home';
   static const ONBORADING = '/onborading';
   static const LOGIN = '/login';
+  static const PHARMAX = '/pharmax';
+  static const SIGNUP_PROFESSIONNEL = '/signup-professionnel';
+  static const SIGNUP_PATIENT = '/signup-patient';
 }

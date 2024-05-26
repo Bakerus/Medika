@@ -5,16 +5,18 @@ class TextfielCustomized extends StatelessWidget {
   final String hintext;
   final IconData inconsPrefixed;
   final IconData? inconsSuffixed;
+  final double height;
   const TextfielCustomized(
       {super.key,
       required this.hintext,
       required this.inconsPrefixed,
+      this.height = 60.0,
       this.inconsSuffixed});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60.0,
+      height: height,
       child: TextField(
         style: const TextStyle(color: Appcolors.blackPrimary),
         cursorColor: Appcolors.blackPrimary,

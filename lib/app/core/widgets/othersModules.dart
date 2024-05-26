@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/utils/extensions.dart';
 
 class OthersModules extends StatelessWidget {
@@ -21,7 +20,7 @@ class OthersModules extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
       decoration: BoxDecoration(
           color: backgroundColor, borderRadius: BorderRadius.circular(8.0)),
       height: 18.0.hp,
