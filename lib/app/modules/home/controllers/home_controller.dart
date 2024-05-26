@@ -4,6 +4,8 @@ class HomeController extends GetxController {
   //TODO: Implement HomeController
 
   final count = 0.obs;
+  final selectedIndex = 0.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -19,5 +21,7 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void onItemTapped(int index) {
+    selectedIndex.value = index;
+  }
 }
