@@ -1,5 +1,9 @@
 import 'package:get/get.dart';
+import 'package:medika/app/modules/drMeet/bindings/drMeet_binding.dart';
+import 'package:medika/app/modules/drMeet/views/drMeetPayement.dart';
+import 'package:medika/app/modules/drMeet/views/drMeet_view.dart';
 
+import '../modules/drMeet/views/drMeetDetail.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -12,7 +16,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.ONBORADING;
+  static const INITIAL = Routes.DrMEETPAYEMENT;
 
   static final routes = [
     GetPage(
@@ -29,6 +33,21 @@ class AppPages {
       name: _Paths.LOGIN,
       page: () => const LoginView(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.DrMEET,
+      page: () => const DrMEETtView(),
+      binding: DrMEETBinding(),
+    ),
+    GetPage(
+      name: _Paths.DrMEETDETAILS,
+      page: () => DrMeetDetail(),
+      binding: DrMEETBinding(),
+    ),
+    GetPage(
+      name: _Paths.DrMEETPAYEMENT,
+      page: () => const DrMeetPayement(),
+      binding: DrMEETBinding(),
     ),
   ];
 }

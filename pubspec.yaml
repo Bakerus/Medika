@@ -6,6 +6,8 @@ environment:
   sdk: '>=3.3.0 <4.0.0'
 
 dependencies: 
+  table_calendar: ^3.0.6
+  intl: ^0.19.0
   cupertino_icons: ^1.0.6
   get: 4.6.6
   flutter: 
@@ -21,7 +23,10 @@ flutter:
 
   assets:
     - assets/images/icons/logo.png
+    - assets/images/icons/om.png
+    - assets/images/icons/drMeetLogoWhite.png
     - assets/images/icons/profilePhoto.png
+    - assets/images/doctor.png
     - assets/images/onBoard1.png
     - assets/images/onBoard2.png
     - assets/images/onBoard3.png
