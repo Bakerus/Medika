@@ -7,8 +7,10 @@ class Appcolors {
 
   static const redPrimary = Color.fromRGBO(213, 0, 0, 1);
   static const redSecondary = Color.fromRGBO(158, 0, 0, 1);
-  static const redOpacity = Color.fromRGBO(213, 0, 0, 0.5);
+  static const redOpacity = Color.fromRGBO(213, 0, 0, 0.05);
 
+  static const greenPrimary = Color.fromRGBO(30, 138, 12, 1);
+  static const greenOpacity = Color.fromRGBO(30, 138, 12, 0.1);
 
 
   static const blackPrimary = Color.fromRGBO(46, 44, 49, 1);

@@ -1,15 +1,22 @@
 import 'package:get/get.dart';
-import 'package:medika/app/modules/drMeet/bindings/drMeet_binding.dart';
-import 'package:medika/app/modules/drMeet/views/drMeetPayement.dart';
-import 'package:medika/app/modules/drMeet/views/drMeet_view.dart';
 
 import '../modules/drMeet/views/drMeetDetail.dart';
+import '../modules/Edukate/bindings/edukate_binding.dart';
+import '../modules/Edukate/views/edukate_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/onborading/bindings/onborading_binding.dart';
 import '../modules/onborading/views/onborading_view.dart';
+import '../modules/pharmax/bindings/pharmax_binding.dart';
+import '../modules/pharmax/views/pharmax_view.dart';
+import '../modules/signupPatient/bindings/signup_patient_binding.dart';
+import '../modules/signupPatient/views/signup_patient_view.dart';
+import '../modules/signupProfessionnel/bindings/signup_professionnel_binding.dart';
+import '../modules/signupProfessionnel/views/signup_professionnel_view.dart';
+import '../modules/traitement/bindings/traitement_binding.dart';
+import '../modules/traitement/views/traitement_view.dart';
 
 part 'app_routes.dart';
 
@@ -48,6 +55,31 @@ class AppPages {
       name: _Paths.DrMEETPAYEMENT,
       page: () => const DrMeetPayement(),
       binding: DrMEETBinding(),
+    ),
+    GetPage(
+      name: _Paths.PHARMAX,
+      page: () => const PharmaxView(),
+      binding: PharmaxBinding(),
+    ),
+    GetPage(
+      name: _Paths.SIGNUP_PROFESSIONNEL,
+      page: () => const SignupProfessionnelView(),
+      binding: SignupProfessionnelBinding(),
+    ),
+    GetPage(
+      name: _Paths.SIGNUP_PATIENT,
+      page: () => const SignupPatientView(),
+      binding: SignupPatientBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDUKATE,
+      page: () => const EdukateView(),
+      binding: EdukateBinding(),
+    ),
+    GetPage(
+      name: _Paths.TRAITEMENT,
+      page: () => const TraitementView(),
+      binding: TraitementBinding(),
     ),
   ];
 }

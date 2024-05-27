@@ -12,6 +12,7 @@ dependencies:
   get: 4.6.6
   flutter: 
     sdk: flutter
+  google_maps_flutter: ^2.6.1
 
 dev_dependencies: 
   flutter_lints: ^3.0.0
@@ -20,6 +21,16 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
+  assets:
+    - assets/images/Group.png
+    - assets/images/Group_2.png
+    - assets/images/Frame.png
+    - assets/images/Soue.jpg
+    - assets/icons/Care.png
+    - assets/icons/Doctor.png
+    - assets/icons/Hospital.png
+    - assets/icons/Pharmacy.png
+    
 
   assets:
     - assets/images/icons/logo.png
