@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
+import 'package:medika/app/core/design/themes.dart';
+import 'package:medika/app/core/utils/extensions.dart';
+import 'package:medika/app/core/widgets/bottomBar.dart';
+import 'package:medika/app/core/widgets/cardEdukate.dart';
+import 'package:medika/app/core/widgets/cardPharmax.dart';
+import 'package:medika/app/core/widgets/cardPharmaxPharmacie.dart';
+import 'package:medika/app/core/widgets/textfield.dart';
 import 'package:medika/app/modules/pharmax/controllers/pharmax_controller.dart';
+import 'package:medika/app/modules/pharmax/views/Pharmax_viewall.dart';
 
 class PharmaXPrincipal extends GetView<PharmaxController> {
   const PharmaXPrincipal({Key? key}) : super(key: key);
@@ -24,7 +33,153 @@ class PharmaXPrincipal extends GetView<PharmaxController> {
               ))
         ],
       ),
-      body: Center(),
+
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  color: Appcolors.redPrimary,
+                  borderRadius: BorderRadius.circular(8.0)),
+              height: 15.0.hp,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Bienvenue sur Pharmax",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'Outfit',
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          Text(
+                            "Recherchez vos médicaments de \n traitement anti-rétroviraux",
+                            style: TextStyle(
+                                color: Color.fromRGBO(255, 255, 255, 0.71),
+                                fontFamily: 'Outfit',
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Image.asset(
+                    'assets/images/Group_2.png',
+                    fit: BoxFit.cover,
+                    width: 22.0.wp,
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: const TextfielCustomized(
+                        hintext: 'Recherche des articles,...',
+                        height: 45.0,
+                        inconsPrefixed: Icons.search),
+                  ),
+                  SizedBox(
+                    height: 62.0.hp,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              "Médicaments courants",
+                              style: TextStyle(
+                                  color: Appcolors.blackPrimary,
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(PharmaXAll());
+                              },
+                              child: Text(
+                                "Tout voir",
+                                style: AppTheme.lightTheme.textTheme.labelMedium!
+                                    .copyWith(color: Appcolors.redPrimary),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 30.0.hp,
+                          child: Column(
+                            children: [
+                              CardPharmax(
+                                image: "assets/images/Soue.jpg",
+                                title: "Nom du médicament",
+                                date: "Grammage",
+                              ),
+                              CardPharmax(
+                                image: "assets/images/Soue.jpg",
+                                title: "Nom du médicament",
+                                date: "Grammage",
+                              ),
+                            ],
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              "Pharmacies",
+                              style: TextStyle(
+                                  color: Appcolors.blackPrimary,
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                            Text(
+                              "Tout voir",
+                              style: AppTheme.lightTheme.textTheme.labelMedium!
+                                  .copyWith(color: Appcolors.redPrimary),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 12.0.hp,
+                          child: CardPharmaxPharmacie(
+                            image: "assets/images/Soue.jpg",
+                            title: "Nom de la pharmacie",
+                            date: "Centre ville - sangmelima",
+                          ),
+                        ),
+                        CardPharmaxPharmacie(
+                          image: "assets/images/Soue.jpg",
+                          title: "Nom de la pharmacie",
+                          date: "Centre ville - sangmelima",
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBarCustomized(),
     );
   }
 }

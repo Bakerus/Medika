@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:medika/app/modules/pharmax/views/pharmax_viewPrincipal.dart';
 
 import '../modules/drMeet/bindings/drMeet_binding.dart';
 import '../modules/drMeet/views/drMeetDetail.dart';
@@ -62,7 +63,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PHARMAX,
-      page: () => const PharmaxView(),
+      page: () => const PharmaXPrincipal(),
       binding: PharmaxBinding(),
     ),
     GetPage(
