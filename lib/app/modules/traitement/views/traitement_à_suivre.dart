@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:medika/app/core/widgets/bottomBar.dart';
 import 'package:medika/app/modules/traitement/views/ajouter_traitemet.dart';
 
 import '../controllers/traitement_controller.dart';
@@ -31,18 +32,15 @@ class TraitementASuivreView extends GetView<TraitementController> {
               height: 100,
               child: Card(
                 color: const Color.fromARGB(255, 223, 223, 223),
+                surfaceTintColor: Colors.white,
                 elevation: 3,
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 20),
-                        width: double.infinity,
-                        child: Text(
-                          "Traitement maux de tête",
-                          textAlign: TextAlign.start,
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
+                      Text(
+                        "Traitement maux de tête",
+                        textAlign: TextAlign.start,
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -59,6 +57,8 @@ class TraitementASuivreView extends GetView<TraitementController> {
               ),
             ),
           ],
-        ));
+        ),
+           bottomNavigationBar: BottomAppBarCustomized(),
+        );
   }
 }
