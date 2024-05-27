@@ -19,6 +19,7 @@ class CardPharmax extends StatelessWidget {
       width: 100.0.wp,
       padding: EdgeInsets.all(5),
       child: Card(
+        surfaceTintColor: Colors.white,
         child: SizedBox(
           width: 10,
           child: Row(

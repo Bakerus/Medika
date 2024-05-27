@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:medika/app/core/design/colors.dart';
+import 'package:medika/app/core/utils/extensions.dart';
 
 import '../../../core/widgets/Dialog.dart';
 import '../controllers/drMeet_controller.dart';
 
 class DrMeetDetail extends GetView<DrMeetController> {
   DrMeetDetail({super.key});
-  DrMeetController drMeetController = DrMeetController();
 
   void _presentDatePicker(BuildContext context) {
     showDatePicker(
@@ -46,6 +47,7 @@ class DrMeetDetail extends GetView<DrMeetController> {
       body: Column(
         children: [
           Card(
+            surfaceTintColor: Colors.white,
             elevation: 2,
             margin: const EdgeInsets.symmetric(
               vertical: 4,
@@ -110,9 +112,6 @@ class DrMeetDetail extends GetView<DrMeetController> {
               ),
             ),
           ),
-          const Divider(
-            thickness: 1,
-          ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: SizedBox(
@@ -130,20 +129,20 @@ class DrMeetDetail extends GetView<DrMeetController> {
               SizedBox(
                 child: Obx(
                   () => Text(
-                    controller.selectedTime ==
-                                TimeOfDay(hour: 00, minute: 00) &&
-                            controller.time.value
+                    controller.selectedDate == DateTime(2019) &&
+                            controller.date.value
                         ? 'Pas de date chosie'
-                        : 'Date choisie : ${DateFormat.yMMMMd().format(controller.selectedDate)}',
+                        : 'Date : ${DateFormat.yMMMMd().format(controller.selectedDate)}',
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ),
               ),
-              TextButton(
+              IconButton(
                   onPressed: () {
                     _presentDatePicker(context);
                   },
-                  child: const Text("Choissisez une date"))
+                  icon: const Icon(Icons.calendar_month,
+                      color: Appcolors.redPrimary)),
             ],
           ),
           Row(
@@ -156,32 +155,31 @@ class DrMeetDetail extends GetView<DrMeetController> {
                                 TimeOfDay(hour: 00, minute: 00) &&
                             controller.time.value
                         ? 'Pas d\'heure choisie'
-                        : 'Heure choisie : ${controller.selectedTime}',
+                        : 'Heure : ${controller.selectedTime.hour} : ${controller.selectedTime.minute} ',
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ),
               ),
-              TextButton(
+              IconButton(
                   onPressed: () {
                     _presentTimePicker(context);
                   },
-                  child: const Text("Choissisez une heure"))
+                  icon: Icon(
+                    Icons.alarm,
+                    color: Appcolors.redPrimary,
+                  ))
             ],
           ),
           Padding(
             padding: const EdgeInsets.only(bottom: 20),
-            child: ElevatedButton(
-                onPressed: () {
-                  showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return const DialogCustomize(
-                            title: 'Bravo Bienvenue',
-                            describe:
-                                'Vous vous etes connectés avec succés à wesero+');
-                      });
-                },
-                child: const Text("Suivant")),
+            child: SizedBox(
+              width: 90.0.wp,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed("/drmeet/payement");
+                  },
+                  child: const Text("Suivant")),
+            ),
           ),
         ],
       ),

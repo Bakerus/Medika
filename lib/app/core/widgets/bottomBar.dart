@@ -13,6 +13,7 @@ class BottomAppBarCustomized extends StatelessWidget {
     return Container(
       child: BottomAppBar(
         height: 8.5.hp,
+        surfaceTintColor:Colors.white,
         shape: CircularNotchedRectangle(),
         notchMargin: 8.0,
         child: Obx(

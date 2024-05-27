@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:medika/app/core/design/colors.dart';
+import 'package:medika/app/core/utils/extensions.dart';
 
 import '../controllers/onborading_controller.dart';
 
@@ -10,7 +12,7 @@ class OnboradingView extends GetView<OnboradingController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('OnboradingView'),
+          title: const Text(''),
           centerTitle: true,
         ),
         body: Obx(
@@ -47,7 +49,7 @@ class OnboradingView extends GetView<OnboradingController> {
                           Positioned(
                             bottom: 0,
                             child: Container(
-                              height: 185,
+                              height: 25.0.hp,
                               width: constraints.maxWidth * 0.9,
                               decoration: BoxDecoration(
                                 color: Colors.white,
@@ -65,6 +67,10 @@ class OnboradingView extends GetView<OnboradingController> {
                                               controller.count.value]
                                           ['description']!,
                                       textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(9, 10, 10, 1),
+                                          fontFamily: 'Outfit',
+                                          fontWeight: FontWeight.w700),
                                     ),
                                   ),
                                 ),
@@ -135,17 +141,37 @@ class OnboradingView extends GetView<OnboradingController> {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      controller.seConnecter();
-                    },
-                    child: const Text("Se connecter"),
+                  SizedBox(
+                    width: 55.0.wp,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        controller.seConnecter();
+                      },
+                      child: const Text("Se connecter"),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 100, top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Text("Inscription"),
+                    child: SizedBox(
+                      width: 55.0.wp,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                              side: BorderSide(color: Appcolors.redPrimary, )
+                            ),
+                          ),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                        ),
+                        onPressed: () {},
+                        child: const Text(
+                          "Inscription",
+                          style: TextStyle(color: Appcolors.redPrimary),
+                        ),
+                      ),
                     ),
                   )
                 ]),

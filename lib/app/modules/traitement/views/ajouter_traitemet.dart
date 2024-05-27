@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:medika/app/core/utils/extensions.dart';
+import 'package:medika/app/core/widgets/bottomBar.dart';
 
 import '../../../core/design/colors.dart';
 import '../controllers/traitement_controller.dart';
@@ -208,13 +210,17 @@ class AjouterTraitementView extends GetView<TraitementController> {
             ),
             Padding(
               padding: const EdgeInsets.all(10),
-              child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text("Enregistrer le traitement")),
+              child: SizedBox(
+                width: 100.0.wp,
+                child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text("Enregistrer le traitement")),
+              ),
             )
           ],
         ),
       ),
+      bottomNavigationBar: BottomAppBarCustomized(),
     );
   }
 }

@@ -35,12 +35,14 @@ flutter:
     - assets/images/icons/om.png
     - assets/images/icons/drMeetLogoWhite.png
     - assets/images/icons/profilePhoto.png
+    - assets/images/icons/pharmax.png
     - assets/images/doctor.png
     - assets/images/onBoard1.png
     - assets/images/onBoard2.png
     - assets/images/onBoard3.png
     - assets/images/onBoard4.png
     - assets/images/onBoard5.png
+    - assets/images/onBoard6.png
     - assets/images/onBoard6.png
 
   fonts:

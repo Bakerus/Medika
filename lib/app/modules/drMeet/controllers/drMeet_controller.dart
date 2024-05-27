@@ -34,6 +34,7 @@ class DrMeetController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+  
   }
 
   @override

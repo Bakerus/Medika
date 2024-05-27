@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:medika/app/core/design/colors.dart';
+import 'package:medika/app/core/utils/extensions.dart';
+import 'package:medika/app/modules/drMeet/views/drMeetDetail.dart';
 
 class Doctoritem extends StatelessWidget {
   const Doctoritem(
@@ -15,45 +19,73 @@ class Doctoritem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-      margin: const EdgeInsets.symmetric(
-        vertical: 4,
-        horizontal: 8,
-      ),
-      child: ListTile(
-        leading: SizedBox(
-          width: 100,
-          child: Image.asset(
-            "assets/images/icons/logo.png",
-            fit: BoxFit.contain,
-            alignment: Alignment.center,
+    return GestureDetector(
+      onTap: () {
+        Get.toNamed('/drmeet/detail');
+      },
+      child: SizedBox(
+        height: 20.0.hp,
+        child: Card(
+          elevation: 5,
+          surfaceTintColor: Colors.white,
+          margin: const EdgeInsets.symmetric(
+            vertical: 4,
+            horizontal: 8,
           ),
-        ),
-        title: Text(
-          name,
-          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        subtitle: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(speciality),
-            Row(
+          child: ListTile(
+            leading: SizedBox(
+              width: 100,
+              child: Image.asset(
+                "assets/images/icons/logo.png",
+                fit: BoxFit.contain,
+                alignment: Alignment.center,
+              ),
+            ),
+            title: Text(
+              name,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'Outfit',
+                color: Appcolors.blackText,
+              ),
+            ),
+            subtitle: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(
-                  Icons.star,
-                  color: Theme.of(context).colorScheme.onPrimary,
+                Text(
+                  speciality,
+                  style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12,
+                      color: Appcolors.greySmallText),
                 ),
-                Text(experience),
+                SizedBox(
+                  height: 9.0.hp,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Theme.of(context).colorScheme.onPrimary,
+                          ),
+                          Text(experience, style: TextStyle(color: Appcolors.redPrimary, fontWeight: FontWeight.w600, fontSize: 12),),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                           Icon(Icons.location_on_sharp, color: Appcolors.greySmallText, size: 18.0.sp,),
+                          Text(location, style: TextStyle(color: Appcolors.greySmallText, fontSize: 12, fontFamily: 'Outfit'),),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
-            Row(
-              children: [
-                const Icon(Icons.pin_drop),
-                Text(location),
-              ],
-            ),
-          ],
+          ),
         ),
       ),
     );

@@ -50,19 +50,21 @@ class PharmaX_viewDetails extends StatelessWidget {
                           fontWeight: FontWeight.w900,
                           fontFamily: 'Outfit',
                         )),
-                        Text("75ml",style: TextStyle(
-                              color: Appcolors.greySmallText,
-                              fontFamily: 'Outfit',
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w500),),
+                    Text(
+                      "75ml",
+                      style: TextStyle(
+                          color: Appcolors.greySmallText,
+                          fontFamily: 'Outfit',
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w500),
+                    ),
                   ],
                 ),
-                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      height: 6.5.hp,
+                      height: 5.0.hp,
                       width: 30.0.wp,
                       child: ElevatedButton(
                           onPressed: null,

@@ -25,7 +25,7 @@ abstract class _Paths {
   static const DrMEETDETAILS = '/drmeet/detail';
   static const DrMEETPAYEMENT = '/drmeet/payement';
   static const PHARMAX = '/pharmax';
-  static const PHARMAX = '/pharmaxPrincipal';
+  static const PharmaXPrincipal = '/pharmaxPrincipal';
   static const SIGNUP_PROFESSIONNEL = '/signup-professionnel';
   static const SIGNUP_PATIENT = '/signup-patient';
   static const EDUKATE = '/edukate';
