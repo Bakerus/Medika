@@ -15,7 +15,7 @@ class DrMeetPayement extends GetView<DrMeetController> {
 
   final doctorProvider = DoctorProvider();
 
-  int drId = Get.arguments as int;
+  final int drId = Get.arguments as int;
 
   static const TextStyle textTitle = TextStyle(
     fontWeight: FontWeight.w900,

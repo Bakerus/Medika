@@ -8,12 +8,12 @@ import 'package:flutter/material.dart';
 class BottomAppBarCustomized extends StatelessWidget {
   BottomAppBarCustomized({super.key});
 
-  HomeController controller = HomeController();
+  final HomeController controller = HomeController();
   Widget build(BuildContext context) {
     return Container(
       child: BottomAppBar(
         height: 8.5.hp,
-        surfaceTintColor:Colors.white,
+        surfaceTintColor: Colors.white,
         shape: CircularNotchedRectangle(),
         notchMargin: 8.0,
         child: Obx(

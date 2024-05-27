@@ -5,7 +5,6 @@ import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/design/themes.dart';
 import 'package:medika/app/core/utils/extensions.dart';
 import 'package:medika/app/core/widgets/bottomBar.dart';
-import 'package:medika/app/core/widgets/cardEdukate.dart';
 import 'package:medika/app/core/widgets/cardPharmax.dart';
 import 'package:medika/app/core/widgets/cardPharmaxPharmacie.dart';
 import 'package:medika/app/core/widgets/textfield.dart';

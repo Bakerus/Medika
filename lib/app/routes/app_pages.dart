@@ -14,7 +14,6 @@ import '../modules/login/views/login_view.dart';
 import '../modules/onborading/bindings/onborading_binding.dart';
 import '../modules/onborading/views/onborading_view.dart';
 import '../modules/pharmax/bindings/pharmax_binding.dart';
-import '../modules/pharmax/views/pharmax_view.dart';
 import '../modules/signupPatient/bindings/signup_patient_binding.dart';
 import '../modules/signupPatient/views/signup_patient_view.dart';
 import '../modules/signupProfessionnel/bindings/signup_professionnel_binding.dart';

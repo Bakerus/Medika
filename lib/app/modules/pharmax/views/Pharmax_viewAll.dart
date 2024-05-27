@@ -3,12 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
-import 'package:medika/app/core/design/themes.dart';
 import 'package:medika/app/core/utils/extensions.dart';
 import 'package:medika/app/core/widgets/bottomBar.dart';
-import 'package:medika/app/core/widgets/cardEdukate.dart';
 import 'package:medika/app/core/widgets/cardPharmax.dart';
-import 'package:medika/app/core/widgets/cardPharmaxPharmacie.dart';
 import 'package:medika/app/core/widgets/textfield.dart';
 import 'package:medika/app/modules/pharmax/controllers/pharmax_controller.dart';
 import 'package:medika/app/modules/pharmax/views/Pharmax_viewDetails.dart';
@@ -37,23 +34,22 @@ class PharmaXAll extends GetView<PharmaxController> {
       body: SizedBox(
         height: 100.0.hp,
         child: Column(
-          
           children: [
             Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: const TextfielCustomized(
-                          hintext: 'Recherche des articles,...',
-                          height: 45.0,
-                          inconsPrefixed: Icons.search),
-                    ),
+              padding: const EdgeInsets.all(8.0),
+              child: const TextfielCustomized(
+                  hintext: 'Recherche des articles,...',
+                  height: 45.0,
+                  inconsPrefixed: Icons.search),
+            ),
             SizedBox(
               height: 70.0.hp,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12.0, vertical: 8.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [

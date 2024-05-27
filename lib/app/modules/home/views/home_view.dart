@@ -151,7 +151,7 @@ class HomeView extends GetView<HomeController> {
                           child: Text(
                               'Error: ${snapshot.error}')); // Show error message
                     } else {
-                      final data = snapshot.data; // Access the fetched data
+// Access the fetched data
                       // Use 'data' in your widget logic
                       return SizedBox(
                         height: 180,

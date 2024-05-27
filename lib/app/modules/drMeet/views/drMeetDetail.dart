@@ -15,7 +15,7 @@ class DrMeetDetail extends GetView<DrMeetController> {
 
   final doctorProvider = DoctorProvider();
 
-  int drId = Get.arguments as int;
+  final int drId = Get.arguments as int;
 
   void _presentDatePicker(BuildContext context) {
     showDatePicker(
