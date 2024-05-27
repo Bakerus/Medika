@@ -57,6 +57,6 @@ class OnboradingController extends GetxController {
   }
 
   void seConnecter() {
-    Get.offAndToNamed("/login");
+    Get.toNamed("/login");
   }
 }
