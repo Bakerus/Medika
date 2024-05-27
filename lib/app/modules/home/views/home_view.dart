@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/design/themes.dart';
 import 'package:medika/app/core/utils/extensions.dart';
+import 'package:medika/app/core/widgets/bottomBar.dart';
 import 'package:medika/app/core/widgets/cardMedecins.dart';
 import 'package:medika/app/core/widgets/cardModule.dart';
 import 'package:medika/app/core/widgets/othersModules.dart';
@@ -142,86 +143,7 @@ class HomeView extends GetView<HomeController> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        height: 7.5.hp,
-        shape: CircularNotchedRectangle(),
-        notchMargin: 8.0,
-        child: Obx(
-          () => Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              GestureDetector(
-                onTap: () => controller.onItemTapped(0),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: controller.selectedIndex == 0
-                          ? Appcolors.redPrimary
-                          : Colors.white,
-                    ),
-                    Icon(Icons.home,
-                        color: controller.selectedIndex == 0
-                            ? Colors.white
-                            : Appcolors.greySmallText)
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () => controller.onItemTapped(1),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: controller.selectedIndex == 1
-                          ? Appcolors.redPrimary
-                          : Colors.white,
-                    ),
-                    Icon(Icons.mail,
-                        color: controller.selectedIndex == 1
-                            ? Colors.white
-                            :Appcolors.greySmallText)
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () => controller.onItemTapped(2),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: controller.selectedIndex == 2
-                          ? Appcolors.redPrimary
-                          : Colors.white,
-                    ),
-                    Icon(Icons.calendar_month,
-                        color: controller.selectedIndex == 2
-                            ? Colors.white
-                            : Appcolors.greySmallText)
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () => controller.onItemTapped(3),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: controller.selectedIndex == 3
-                          ? Appcolors.redPrimary
-                          : Colors.white,
-                    ),
-                    Icon(Icons.person_outline,
-                        color: controller.selectedIndex == 3
-                            ? Colors.white
-                            : Appcolors.greySmallText)
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: BottomAppBarCustomized(),
     );
   }
 }

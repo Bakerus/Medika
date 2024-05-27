@@ -9,6 +9,8 @@ abstract class Routes {
   static const PHARMAX = _Paths.PHARMAX;
   static const SIGNUP_PROFESSIONNEL = _Paths.SIGNUP_PROFESSIONNEL;
   static const SIGNUP_PATIENT = _Paths.SIGNUP_PATIENT;
+  static const EDUKATE = _Paths.EDUKATE;
+  static const TRAITEMENT = _Paths.TRAITEMENT;
 }
 
 abstract class _Paths {
@@ -19,4 +21,6 @@ abstract class _Paths {
   static const PHARMAX = '/pharmax';
   static const SIGNUP_PROFESSIONNEL = '/signup-professionnel';
   static const SIGNUP_PATIENT = '/signup-patient';
+  static const EDUKATE = '/edukate';
+  static const TRAITEMENT = '/traitement';
 }
