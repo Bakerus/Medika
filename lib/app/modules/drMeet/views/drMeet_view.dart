@@ -5,15 +5,19 @@ import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/utils/extensions.dart';
 import 'package:medika/app/core/widgets/bottomBar.dart';
 import 'package:medika/app/modules/drMeet/widgets/doctorItem.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/widgets/textfield.dart';
+import '../../../data/providers/doctorProvider.dart';
 import '../controllers/drMeet_controller.dart';
 
 class DrMEETtView extends GetView<DrMeetController> {
-  const DrMEETtView({Key? key}) : super(key: key);
+  DrMEETtView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final doctorProvider = Provider.of<DoctorProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("DrMeet"),
@@ -43,7 +47,7 @@ class DrMEETtView extends GetView<DrMeetController> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          "Bienvenue sur Pharmax",
+                          "Bienvenue sur DrMeet",
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Outfit',
@@ -70,29 +74,29 @@ class DrMEETtView extends GetView<DrMeetController> {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: const TextfielCustomized(
+          const Padding(
+            padding: EdgeInsets.all(10.0),
+            child: TextfielCustomized(
                 hintext: 'Recherche des articles,...',
                 height: 45.0,
                 inconsPrefixed: Icons.search),
           ),
           Expanded(
-            child: ListView(
-              children: DrMeetController.doctors
-                  .map((dr) => Doctoritem(
-                        key: ValueKey(dr.id),
-                        name: dr.name,
-                        experience: dr.experience,
-                        speciality: dr.specialty,
-                        location: dr.location,
-                      ))
-                  .toList(),
-            ),
-          ),
+              child: ListView(
+            children: doctorProvider.doctors
+                .map((dr) => Doctoritem(
+                      key: ValueKey(dr.id),
+                      id: dr.id,
+                      name: dr.name,
+                      experience: dr.experience,
+                      speciality: dr.specialty,
+                      location: dr.location,
+                      imageUrl: dr.imageUrl,
+                    ))
+                .toList(),
+          )),
         ],
       ),
-
       bottomNavigationBar: BottomAppBarCustomized(),
     );
   }

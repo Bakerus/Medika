@@ -14,13 +14,17 @@ import 'package:medika/app/modules/Edukate/views/edukate_view.dart';
 import 'package:medika/app/modules/drMeet/views/drMeet_view.dart';
 import 'package:medika/app/modules/pharmax/views/pharmax_viewPrincipal.dart';
 import 'package:medika/app/modules/traitement/views/traitement_view.dart';
+import 'package:provider/provider.dart';
 
+import '../../../data/providers/doctorProvider.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final doctorProvider = Provider.of<DoctorProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -69,13 +73,28 @@ class HomeView extends GetView<HomeController> {
                 const TextfielCustomized(
                     hintext: 'Recherche de médecin, medicaments, articles,...',
                     inconsPrefixed: Icons.search),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    CardCustomized(moduleName: 'DrMeet', moduleImage: "assets/icons/Doctor.png", page: DrMEETtView(),),
-                    CardCustomized(moduleName: 'Pharmax', moduleImage: "assets/icons/Pharmacy.png", page:PharmaXPrincipal()),
-                    CardCustomized(moduleName: 'Therapy', moduleImage: "assets/icons/Hospital.png", page: TraitementView(),),
-                    CardCustomized(moduleName: 'Care+', moduleImage: "assets/icons/Care.png", page: EdukateView(),),
+                    CardCustomized(
+                      moduleName: 'DrMeet',
+                      moduleImage: "assets/icons/Doctor.png",
+                      page: DrMEETtView(),
+                    ),
+                    const CardCustomized(
+                        moduleName: 'Pharmax',
+                        moduleImage: "assets/icons/Pharmacy.png",
+                        page: PharmaXPrincipal()),
+                    const CardCustomized(
+                      moduleName: 'Therapy',
+                      moduleImage: "assets/icons/Hospital.png",
+                      page: TraitementView(),
+                    ),
+                    const CardCustomized(
+                      moduleName: 'Care+',
+                      moduleImage: "assets/icons/Care.png",
+                      page: EdukateView(),
+                    ),
                   ],
                 ),
                 const OthersModules(
@@ -88,7 +107,7 @@ class HomeView extends GetView<HomeController> {
                   colorText: Appcolors.blackPrimary,
                   page: EdukateView(),
                 ),
-                const OthersModules(
+                OthersModules(
                   desription: "Des médecins prêts à vous\n suivre à distance",
                   image: 'assets/images/Frame.png',
                   backgroundColor: Appcolors.redPrimary,
@@ -120,36 +139,43 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ],
                 ),
-                const SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      CardCustomizedMedecins(
-                        image: "assets/images/Soue.jpg",
-                        doctorName: 'Dr Habib Hamaro',
-                        doctorSpeciality: "Infectiologue",
-                        localisation: "Washington , USA",
-                      ),
-                      CardCustomizedMedecins(
-                        image: "assets/images/Soue.jpg",
-                        doctorName: 'Dr Habib Hamaro',
-                        doctorSpeciality: "Infectiologue",
-                        localisation: "Washington , USA",
-                      ),
-                      CardCustomizedMedecins(
-                        image: "assets/images/Soue.jpg",
-                        doctorName: 'Dr Habib Hamaro',
-                        doctorSpeciality: "Infectiologue",
-                        localisation: "Washington , USA",
-                      ),
-                      CardCustomizedMedecins(
-                        image: "assets/images/Soue.jpg",
-                        doctorName: 'Dr Habib Hamaro',
-                        doctorSpeciality: "Infectiologue",
-                        localisation: "Washington , USA",
-                      )
-                    ],
-                  ),
+                FutureBuilder<String>(
+                  future: doctorProvider.fetchDoctors(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Center(
+                          child:
+                              CircularProgressIndicator()); // Show loading indicator
+                    } else if (snapshot.hasError) {
+                      return Center(
+                          child: Text(
+                              'Error: ${snapshot.error}')); // Show error message
+                    } else {
+                      final data = snapshot.data; // Access the fetched data
+                      // Use 'data' in your widget logic
+                      return SizedBox(
+                        height: 180,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: doctorProvider.doctors
+                              .map((dr) => GestureDetector(
+                                    onTap: () {
+                                      Get.toNamed("/drmeet/detail",
+                                          arguments: dr.id);
+                                    },
+                                    child: CardCustomizedMedecins(
+                                      key: ValueKey(dr.id),
+                                      image: dr.imageUrl,
+                                      doctorName: dr.name,
+                                      doctorSpeciality: dr.specialty,
+                                      localisation: dr.location,
+                                    ),
+                                  ))
+                              .toList(),
+                        ),
+                      );
+                    }
+                  },
                 ),
               ],
             ),

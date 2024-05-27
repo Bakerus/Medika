@@ -47,7 +47,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DrMEET,
-      page: () => const DrMEETtView(),
+      page: () => DrMEETtView(),
       binding: DrMEETBinding(),
     ),
     GetPage(
@@ -57,7 +57,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DrMEETPAYEMENT,
-      page: () => const DrMeetPayement(),
+      page: () => DrMeetPayement(),
       binding: DrMEETBinding(),
     ),
     GetPage(

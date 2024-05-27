@@ -3,12 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/utils/extensions.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/widgets/Dialog.dart';
+import '../../../data/providers/doctorProvider.dart';
+import '../Models/doctorModel.dart';
 import '../controllers/drMeet_controller.dart';
 
 class DrMeetPayement extends GetView<DrMeetController> {
-  const DrMeetPayement({super.key});
+  DrMeetPayement({super.key});
+
+  final doctorProvider = DoctorProvider();
+
+  int drId = Get.arguments as int;
 
   static const TextStyle textTitle = TextStyle(
     fontWeight: FontWeight.w900,
@@ -17,6 +24,9 @@ class DrMeetPayement extends GetView<DrMeetController> {
 
   @override
   Widget build(BuildContext context) {
+    final doctorProvider = Provider.of<DoctorProvider>(context);
+    final Doctor doctor =
+        doctorProvider.doctors.firstWhere((doc) => doc.id == drId);
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
@@ -29,48 +39,87 @@ class DrMeetPayement extends GetView<DrMeetController> {
         ],
       ),
       body: Column(children: [
-        Card(
-          elevation: 2,
-          margin: const EdgeInsets.symmetric(
-            vertical: 4,
-            horizontal: 8,
-          ),
-          child: Material(
+        SizedBox(
+          height: 18.0.hp,
+          child: Card(
+            elevation: 5,
             surfaceTintColor: Colors.white,
-            child: ListTile(
-              leading: Image.asset(
-                "assets/images/doctor.png",
-                width: 30.0.wp,
-                height: 40.0.hp,
-                fit: BoxFit.cover,
-                alignment: Alignment.center,
+            margin: const EdgeInsets.symmetric(
+              vertical: 4,
+              horizontal: 8,
+            ),
+            child: Row(children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Image.network(
+                  doctor.imageUrl,
+                  height: 100,
+                  fit: BoxFit.fitHeight,
+                  alignment: Alignment.topCenter,
+                ),
               ),
-              title: const Text(
-                "Doctor Name",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              subtitle: Column(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("speciality"),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: Theme.of(context).colorScheme.onPrimary,
-                      ),
-                      const Text("experience"),
-                    ],
+                  Text(
+                    doctor.name,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'Outfit',
+                      color: Appcolors.blackText,
+                    ),
                   ),
-                  const Row(
-                    children: [
-                      Icon(Icons.pin_drop),
-                      Text("location"),
-                    ],
+                  Text(
+                    doctor.specialty,
+                    style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12,
+                        color: Appcolors.greySmallText),
+                  ),
+                  SizedBox(
+                    height: 9.0.hp,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: Theme.of(context).colorScheme.onPrimary,
+                            ),
+                            Text(
+                              doctor.experience,
+                              style: TextStyle(
+                                  color: Appcolors.redPrimary,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.location_on_sharp,
+                              color: Appcolors.greySmallText,
+                              size: 18.0.sp,
+                            ),
+                            Text(
+                              doctor.location,
+                              style: TextStyle(
+                                  color: Appcolors.greySmallText,
+                                  fontSize: 12,
+                                  fontFamily: 'Outfit'),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
-            ),
+            ]),
           ),
         ),
         Padding(
