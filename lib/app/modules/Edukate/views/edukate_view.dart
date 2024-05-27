@@ -52,7 +52,7 @@ class EdukateView extends GetView<EdukateController> {
                             Text(
                               "Bienvenue sur Edukate",
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Color.fromRGBO(255, 255, 255, 0.71),
                                   fontFamily: 'Outfit',
                                   fontSize: 16,
                                   fontWeight: FontWeight.w700),
