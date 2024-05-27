@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
+import 'package:medika/app/core/utils/extensions.dart';
 
 import '../../../core/widgets/Dialog.dart';
 import '../controllers/drMeet_controller.dart';
@@ -34,38 +35,41 @@ class DrMeetPayement extends GetView<DrMeetController> {
             vertical: 4,
             horizontal: 8,
           ),
-          child: ListTile(
-            leading: Image.asset(
-              "assets/images/doctor.png",
-              width: 111,
-              height: 111,
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
-            ),
-            title: const Text(
-              "Doctor Name",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text("speciality"),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.star,
-                      color: Theme.of(context).colorScheme.onPrimary,
-                    ),
-                    const Text("experience"),
-                  ],
-                ),
-                const Row(
-                  children: [
-                    Icon(Icons.pin_drop),
-                    Text("location"),
-                  ],
-                ),
-              ],
+          child: Material(
+            surfaceTintColor: Colors.white,
+            child: ListTile(
+              leading: Image.asset(
+                "assets/images/doctor.png",
+                width: 30.0.wp,
+                height: 40.0.hp,
+                fit: BoxFit.cover,
+                alignment: Alignment.center,
+              ),
+              title: const Text(
+                "Doctor Name",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text("speciality"),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Theme.of(context).colorScheme.onPrimary,
+                      ),
+                      const Text("experience"),
+                    ],
+                  ),
+                  const Row(
+                    children: [
+                      Icon(Icons.pin_drop),
+                      Text("location"),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -194,16 +198,19 @@ class DrMeetPayement extends GetView<DrMeetController> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 20),
-                child: ElevatedButton(
-                    onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return const DialogCustomize(
-                                title: 'Réservation réussi', describe: '');
-                          });
-                    },
-                    child: const Text("Réserver")),
+                child: SizedBox(
+                  width: 90.0.wp,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return const DialogCustomize(
+                                  title: 'Réservation réussi', describe: '');
+                            });
+                      },
+                      child: const Text("Réserver")),
+                ),
               ),
             ],
           ),

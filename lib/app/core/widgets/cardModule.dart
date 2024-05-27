@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/utils/extensions.dart';
 
 class CardCustomized extends StatelessWidget {
   final String moduleName;
   final String moduleImage;
+  final Widget page;
   const CardCustomized(
-      {super.key, required this.moduleImage, required this.moduleName});
+      {super.key, required this.page, required this.moduleImage, required this.moduleName});
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +24,18 @@ class CardCustomized extends StatelessWidget {
                 children: [
                   SizedBox(
                     height: 8.5.hp,
-                    child: Card(
-                      elevation: 1.0,
-                      color: Colors.white,
-                      child: Center(
-                        child: Image.asset(
-                          moduleImage,
-                          fit: BoxFit.cover,
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.to(page);
+                      },
+                      child: Card(
+                        elevation: 1.0,
+                        surfaceTintColor: Colors.white,
+                        child: Center(
+                          child: Image.asset(
+                            moduleImage,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),

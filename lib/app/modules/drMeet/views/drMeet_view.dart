@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:medika/app/core/design/colors.dart';
+import 'package:medika/app/core/utils/extensions.dart';
+import 'package:medika/app/core/widgets/bottomBar.dart';
 import 'package:medika/app/modules/drMeet/widgets/doctorItem.dart';
 
 import '../../../core/widgets/textfield.dart';
@@ -12,68 +15,85 @@ class DrMEETtView extends GetView<DrMeetController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("DrMeet"),
-          actions: const [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Icon(Icons.more_vert),
-            ),
-          ],
-        ),
-        body: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              decoration:
-                  BoxDecoration(color: Theme.of(context).colorScheme.onPrimary),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Expanded(
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+      appBar: AppBar(
+        title: const Text("DrMeet"),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Icon(Icons.more_vert),
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+                color: Appcolors.redPrimary,
+                borderRadius: BorderRadius.circular(8.0)),
+            height: 15.0.hp,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          "Bienvenue sur DrMeet",
+                          "Bienvenue sur Pharmax",
                           style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w900),
+                              color: Colors.white,
+                              fontFamily: 'Outfit',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700),
                         ),
                         Text(
-                          "Retrouves des professionels présents sur notre plateforme",
-                          style: TextStyle(color: Colors.white),
+                          "Recherchez vos médicaments de \n traitement anti-rétroviraux",
+                          style: TextStyle(
+                              color: Color.fromRGBO(255, 255, 255, 0.71),
+                              fontFamily: 'Outfit',
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
-                  ),
-                  Image.asset(
-                    "assets/images/icons/drMeetLogoWhite.png",
-                    height: 100,
-                    width: 100,
-                  )
-                ],
-              ),
+                  ],
+                ),
+                Image.asset(
+                  'assets/images/icons/drMeetLogoWhite.png',
+                  fit: BoxFit.cover,
+                  width: 18.0.wp,
+                ),
+              ],
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-              child: TextfielCustomized(
-                  hintext: 'Recherchez des professionels pour vous',
-                  inconsPrefixed: Icons.search),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: const TextfielCustomized(
+                hintext: 'Recherche des articles,...',
+                height: 45.0,
+                inconsPrefixed: Icons.search),
+          ),
+          Expanded(
+            child: ListView(
+              children: DrMeetController.doctors
+                  .map((dr) => Doctoritem(
+                        key: ValueKey(dr.id),
+                        name: dr.name,
+                        experience: dr.experience,
+                        speciality: dr.specialty,
+                        location: dr.location,
+                      ))
+                  .toList(),
             ),
-            Expanded(
-              child: ListView(
-                children: DrMeetController.doctors
-                    .map((dr) => Doctoritem(
-                          key: ValueKey(dr.id),
-                          name: dr.name,
-                          experience: dr.experience,
-                          speciality: dr.specialty,
-                          location: dr.location,
-                        ))
-                    .toList(),
-              ),
-            ),
-          ],
-        ));
+          ),
+        ],
+      ),
+
+      bottomNavigationBar: BottomAppBarCustomized(),
+    );
   }
 }

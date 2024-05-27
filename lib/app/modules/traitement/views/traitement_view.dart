@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:medika/app/core/widgets/bottomBar.dart';
 import './traitement_à_suivre.dart';
 
 import '../controllers/traitement_controller.dart';
@@ -56,6 +57,7 @@ class TraitementView extends GetView<TraitementController> {
                       Get.to(() => const TraitementASuivreView());
                     },
                     child: Card(
+                      surfaceTintColor: Colors.white,
                       elevation: 3,
                       child: Row(children: [
                         Padding(
@@ -74,6 +76,7 @@ class TraitementView extends GetView<TraitementController> {
                 SizedBox(
                   height: 100,
                   child: Card(
+                    surfaceTintColor: Colors.white,
                     elevation: 3,
                     child: Row(children: [
                       Padding(
@@ -90,6 +93,7 @@ class TraitementView extends GetView<TraitementController> {
                 SizedBox(
                   height: 100,
                   child: Card(
+                    surfaceTintColor: Colors.white,
                     elevation: 3,
                     child: Row(children: [
                       Padding(
@@ -107,6 +111,7 @@ class TraitementView extends GetView<TraitementController> {
                 SizedBox(
                   height: 100,
                   child: Card(
+                    surfaceTintColor: Colors.white,
                     elevation: 3,
                     child: Row(children: [
                       Padding(
@@ -123,6 +128,8 @@ class TraitementView extends GetView<TraitementController> {
               ]),
             ),
           ],
-        ));
+        ),
+           bottomNavigationBar: BottomAppBarCustomized(),
+        );
   }
 }

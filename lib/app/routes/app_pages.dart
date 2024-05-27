@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:medika/app/modules/pharmax/views/pharmax_viewPrincipal.dart';
 
 import '../modules/drMeet/bindings/drMeet_binding.dart';
 import '../modules/drMeet/views/drMeetDetail.dart';
@@ -26,7 +27,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.DrMEETDETAIL;
+  static const INITIAL = Routes.ONBORADING;
 
   static final routes = [
     GetPage(
@@ -61,7 +62,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PHARMAX,
-      page: () => const PharmaxView(),
+      page: () => const PharmaXPrincipal(),
       binding: PharmaxBinding(),
     ),
     GetPage(
