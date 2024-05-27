@@ -33,6 +33,7 @@ class PharmaXPrincipal extends GetView<PharmaxController> {
               ))
         ],
       ),
+
       body: SingleChildScrollView(
         child: Column(
           children: [

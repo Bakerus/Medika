@@ -25,9 +25,8 @@ class TextfielCustomized extends StatelessWidget {
         decoration: InputDecoration(
             filled: true,
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(24.0),
-              borderSide: BorderSide.none
-            ),
+                borderRadius: BorderRadius.circular(24.0),
+                borderSide: BorderSide.none),
             fillColor: Appcolors.greyTextfield,
             prefixIcon: Icon(
               inconsPrefixed,

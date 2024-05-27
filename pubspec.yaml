@@ -6,6 +6,8 @@ environment:
   sdk: '>=3.3.0 <4.0.0'
 
 dependencies: 
+  table_calendar: ^3.0.6
+  intl: ^0.19.0
   cupertino_icons: ^1.0.6
   get: 4.6.6
   flutter: 
@@ -13,7 +15,7 @@ dependencies:
   google_maps_flutter: ^2.6.1
 
 dev_dependencies: 
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
   flutter_test: 
     sdk: flutter
 
@@ -28,7 +30,18 @@ flutter:
     - assets/icons/Doctor.png
     - assets/icons/Hospital.png
     - assets/icons/Pharmacy.png
-    
+    - assets/images/icons/logo.png
+    - assets/images/icons/therapyLogoWhite.png
+    - assets/images/icons/om.png
+    - assets/images/icons/drMeetLogoWhite.png
+    - assets/images/icons/profilePhoto.png
+    - assets/images/doctor.png
+    - assets/images/onBoard1.png
+    - assets/images/onBoard2.png
+    - assets/images/onBoard3.png
+    - assets/images/onBoard4.png
+    - assets/images/onBoard5.png
+    - assets/images/onBoard6.png
 
   fonts:
     - family: Outfit
