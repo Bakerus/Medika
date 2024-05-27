@@ -18,7 +18,7 @@ abstract class _Paths {
   static const HOME = '/home';
   static const ONBORADING = '/onborading';
   static const LOGIN = '/login';
-  static const PHARMAX = '/pharmax';
+  static const PHARMAX = '/pharmaxPrincipal';
   static const SIGNUP_PROFESSIONNEL = '/signup-professionnel';
   static const SIGNUP_PATIENT = '/signup-patient';
   static const EDUKATE = '/edukate';
