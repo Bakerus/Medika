@@ -18,6 +18,8 @@ class TextfielCustomized extends StatelessWidget {
     return SizedBox(
       height: height,
       child: TextField(
+        maxLines: 1,
+        textAlignVertical: TextAlignVertical.center,
         style: const TextStyle(color: Appcolors.blackPrimary),
         cursorColor: Appcolors.blackPrimary,
         decoration: InputDecoration(
@@ -37,9 +39,10 @@ class TextfielCustomized extends StatelessWidget {
               color: Appcolors.greyPrimary,
               size: 22.0,
             ),
+            contentPadding: EdgeInsets.zero,
             hintText: hintext,
             hintStyle: const TextStyle(
-                color: Appcolors.blackPrimary,
+                color: Appcolors.greyPrimary,
                 fontFamily: 'Outfit',
                 fontSize: 16,
                 fontWeight: FontWeight.w600)),

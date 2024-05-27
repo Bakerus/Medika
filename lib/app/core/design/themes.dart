@@ -9,7 +9,7 @@ class AppTheme {
     fontFamily: 'Outfit',
     colorScheme: const ColorScheme(
         brightness: Brightness.light,
-        primary: Colors.white,
+        primary: Colors.white ,
         onPrimary: Appcolors.redPrimary,
         secondary: Appcolors.redSecondary,
         onSecondary: Colors.white,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
@@ -26,7 +27,7 @@ class PharmaxView extends GetView<PharmaxController> {
               ))
         ],
       ),
-      body: Stack(children: [
+      body: Stack( children: [
         GoogleMap(
           mapType: MapType.normal,
           initialCameraPosition: controller.cameraPosition.value,
@@ -35,12 +36,13 @@ class PharmaxView extends GetView<PharmaxController> {
           },
         ),
         Container(
-          margin:  EdgeInsets.all(8)
-          child: const TextfielCustomized(
-              height: 50.0,
-              hintext: 'Search pharmacie...',
-              inconsPrefixed: Icons.search),
-        ),
+                  margin: EdgeInsets.all(8),
+                  child: const TextfielCustomized(
+                      height: 50.0,
+                      hintext: 'Search pharmacie...',
+                      inconsPrefixed: Icons.search),
+                ),
+
       ]),
     );
   }
