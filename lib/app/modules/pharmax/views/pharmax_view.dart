@@ -35,7 +35,7 @@ class PharmaxView extends GetView<PharmaxController> {
           },
         ),
         Container(
-          margin:  EdgeInsets.all(8)
+          margin: EdgeInsets.all(8),
           child: const TextfielCustomized(
               height: 50.0,
               hintext: 'Search pharmacie...',

@@ -4,6 +4,12 @@ class SignupPatientController extends GetxController {
   //TODO: Implement SignupPatientController
 
   final count = 0.obs;
+  final isChecked = false.obs;
+
+  void toggleCheckbox() {
+    isChecked.value = !isChecked.value;
+  }
+
   @override
   void onInit() {
     super.onInit();

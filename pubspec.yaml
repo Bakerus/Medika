@@ -3,14 +3,20 @@ version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
 environment: 
-  sdk: '>=3.3.0 <4.0.0'
+  sdk: '>=3.2.6 <4.0.0'
 
 dependencies: 
   cupertino_icons: ^1.0.6
   get: 4.6.6
   flutter: 
     sdk: flutter
-  google_maps_flutter: ^2.6.1
+  google_maps_flutter: ^2.5.3
+  file_picker: ^5.0.1 
+  image_picker: ^0.8.4
+  country_picker: ^2.0.26
+  passwordfield: ^0.2.0
+  intl_phone_number_input: ^0.7.4
+  phonenumbers: ^1.0.0
 
 dev_dependencies: 
   flutter_lints: ^3.0.0

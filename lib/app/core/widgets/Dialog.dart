@@ -49,7 +49,8 @@ class DialogCustomize extends StatelessWidget {
             SizedBox(
               width: 45.0.wp,
               height: 50,
-              child: const ElevatedButton(onPressed: null, child: Text("Vers l'accueil")),
+              child: const ElevatedButton(
+                  onPressed: null, child: Text("Se connecter")),
             ),
           ],
         ),
