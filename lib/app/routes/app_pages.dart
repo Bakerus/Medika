@@ -20,13 +20,14 @@ import '../modules/signupProfessionnel/bindings/signup_professionnel_binding.dar
 import '../modules/signupProfessionnel/views/signup_professionnel_view.dart';
 import '../modules/traitement/bindings/traitement_binding.dart';
 import '../modules/traitement/views/traitement_view.dart';
+import '../modules/traitement/views/traitement_à_suivre.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.DrMEETPAYEMENT;
+  static const INITIAL = Routes.TRAITEMENT;
 
   static final routes = [
     GetPage(

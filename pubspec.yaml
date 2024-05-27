@@ -31,6 +31,7 @@ flutter:
     - assets/icons/Hospital.png
     - assets/icons/Pharmacy.png
     - assets/images/icons/logo.png
+    - assets/images/icons/therapyLogoWhite.png
     - assets/images/icons/om.png
     - assets/images/icons/drMeetLogoWhite.png
     - assets/images/icons/profilePhoto.png
