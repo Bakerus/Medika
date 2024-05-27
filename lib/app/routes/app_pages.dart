@@ -1,8 +1,11 @@
 import 'package:get/get.dart';
 
+import '../modules/drMeet/bindings/drMeet_binding.dart';
 import '../modules/drMeet/views/drMeetDetail.dart';
 import '../modules/Edukate/bindings/edukate_binding.dart';
 import '../modules/Edukate/views/edukate_view.dart';
+import '../modules/drMeet/views/drMeetPayement.dart';
+import '../modules/drMeet/views/drMeet_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';

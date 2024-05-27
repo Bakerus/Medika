@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/modules/pharmax/controllers/pharmax_controller.dart';
 
-class PharmaXPrincipal extends GetView<PharmaxController>{
-const PharmaXPrincipal({Key? key}) : super(key: key);
+class PharmaXPrincipal extends GetView<PharmaxController> {
+  const PharmaXPrincipal({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            appBar: AppBar(
+      appBar: AppBar(
         leading: const IconButton(
             onPressed: null,
             icon: Icon(Icons.arrow_back_ios_new_rounded,
@@ -24,8 +24,7 @@ const PharmaXPrincipal({Key? key}) : super(key: key);
               ))
         ],
       ),
-      body: ,
+      body: Center(),
     );
   }
-
 }
