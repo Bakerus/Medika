@@ -23,7 +23,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.PHARMAX;
+  static const INITIAL = Routes.ONBORADING;
 
   static final routes = [
     GetPage(
