@@ -73,7 +73,7 @@ class PharmaXPrincipal extends GetView<PharmaxController> {
                     ],
                   ),
                   Image.asset(
-                    'assets/images/Group_2.png',
+                    'assets/images/icons/pharmax.png',
                     fit: BoxFit.cover,
                     width: 22.0.wp,
                   ),
@@ -115,7 +115,8 @@ class PharmaXPrincipal extends GetView<PharmaxController> {
                               },
                               child: Text(
                                 "Tout voir",
-                                style: AppTheme.lightTheme.textTheme.labelMedium!
+                                style: AppTheme
+                                    .lightTheme.textTheme.labelMedium!
                                     .copyWith(color: Appcolors.redPrimary),
                               ),
                             ),

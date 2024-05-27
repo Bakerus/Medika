@@ -19,11 +19,12 @@ class CardEdukate extends StatelessWidget {
       width: 100.0.wp,
       padding: EdgeInsets.all(5),
       child: Card(
+        surfaceTintColor: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
-                width: 15.0.wp,
+                width: 16.0.wp,
                 child: ClipRRect(
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(10),
@@ -31,9 +32,14 @@ class CardEdukate extends StatelessWidget {
                       bottomLeft: Radius.circular(10),
                       bottomRight: Radius.circular(10),
                     ),
-                    child: Image.asset(image))),
+                    child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        child: Image.asset(
+                          image,
+                          width: 20.0.wp,
+                        )))),
             SizedBox(
-              width: 57.0.wp,
+              width: 58.0.wp,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,

@@ -1,8 +1,12 @@
 import 'package:get/get.dart';
 import 'package:medika/app/modules/pharmax/views/pharmax_viewPrincipal.dart';
 
+import '../modules/drMeet/bindings/drMeet_binding.dart';
+import '../modules/drMeet/views/drMeetDetail.dart';
 import '../modules/Edukate/bindings/edukate_binding.dart';
 import '../modules/Edukate/views/edukate_view.dart';
+import '../modules/drMeet/views/drMeetPayement.dart';
+import '../modules/drMeet/views/drMeet_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -17,6 +21,7 @@ import '../modules/signupProfessionnel/bindings/signup_professionnel_binding.dar
 import '../modules/signupProfessionnel/views/signup_professionnel_view.dart';
 import '../modules/traitement/bindings/traitement_binding.dart';
 import '../modules/traitement/views/traitement_view.dart';
+import '../modules/traitement/views/traitement_à_suivre.dart';
 
 part 'app_routes.dart';
 
@@ -40,6 +45,21 @@ class AppPages {
       name: _Paths.LOGIN,
       page: () => const LoginView(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.DrMEET,
+      page: () => const DrMEETtView(),
+      binding: DrMEETBinding(),
+    ),
+    GetPage(
+      name: _Paths.DrMEETDETAILS,
+      page: () => DrMeetDetail(),
+      binding: DrMEETBinding(),
+    ),
+    GetPage(
+      name: _Paths.DrMEETPAYEMENT,
+      page: () => const DrMeetPayement(),
+      binding: DrMEETBinding(),
     ),
     GetPage(
       name: _Paths.PHARMAX,

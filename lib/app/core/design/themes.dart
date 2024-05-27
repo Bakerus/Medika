@@ -9,7 +9,7 @@ class AppTheme {
     fontFamily: 'Outfit',
     colorScheme: const ColorScheme(
         brightness: Brightness.light,
-        primary: Colors.white ,
+        primary: Appcolors.redPrimary,
         onPrimary: Appcolors.redPrimary,
         secondary: Appcolors.redSecondary,
         onSecondary: Colors.white,
@@ -27,7 +27,6 @@ class AppTheme {
             ),
             padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
               const EdgeInsets.symmetric(vertical: 15),
-              
             ),
             backgroundColor:
                 MaterialStateProperty.all<Color>(Appcolors.redPrimary),

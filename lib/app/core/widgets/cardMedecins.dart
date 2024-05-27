@@ -17,6 +17,7 @@ class CardCustomizedMedecins extends StatelessWidget {
       height: 25.0.hp,
       width: 35.0.wp,
       child: Card(
+        surfaceTintColor: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,

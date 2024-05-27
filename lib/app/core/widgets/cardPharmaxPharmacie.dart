@@ -19,6 +19,7 @@ class CardPharmaxPharmacie extends StatelessWidget {
       width: 100.0.wp,
       padding: EdgeInsets.all(5),
       child: Card(
+        surfaceTintColor: Colors.white,
         child: SizedBox(
           width: 10,
           child: Row(
@@ -67,12 +68,14 @@ class CardPharmaxPharmacie extends StatelessWidget {
                           width: 32.0.wp,
                           child: ElevatedButton(
                               style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all<Color>(
-                                      Appcolors.redOpacity),
-                                  foregroundColor: MaterialStateProperty.all<Color>(
-                                      Appcolors.redPrimary),
-                                  padding:
-                                      MaterialStateProperty.all<EdgeInsetsGeometry>(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Appcolors.redOpacity),
+                                  foregroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Appcolors.redPrimary),
+                                  padding: MaterialStateProperty.all<
+                                      EdgeInsetsGeometry>(
                                     const EdgeInsets.symmetric(vertical: 2),
                                   ),
                                   shape: MaterialStateProperty.all<
@@ -90,18 +93,19 @@ class CardPharmaxPharmacie extends StatelessWidget {
                                     fontFamily: 'Outfit',
                                   ))),
                         ),
-                    
                         SizedBox(
                           height: 28.0,
                           width: 12.0.wp,
                           child: ElevatedButton(
                               style: ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all<Color>(
-                                      Appcolors.greenOpacity),
-                                  foregroundColor: MaterialStateProperty.all<Color>(
-                                      Appcolors.greenPrimary),
-                                  padding:
-                                      MaterialStateProperty.all<EdgeInsetsGeometry>(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Appcolors.greenOpacity),
+                                  foregroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Appcolors.greenPrimary),
+                                  padding: MaterialStateProperty.all<
+                                      EdgeInsetsGeometry>(
                                     const EdgeInsets.symmetric(vertical: 2),
                                   ),
                                   shape: MaterialStateProperty.all<
@@ -124,7 +128,8 @@ class CardPharmaxPharmacie extends StatelessWidget {
                   )
                 ],
               ),
-              Icon(Icons.location_on_rounded, size: 18.0.sp, color: Appcolors.redPrimary),
+              Icon(Icons.location_on_rounded,
+                  size: 18.0.sp, color: Appcolors.redPrimary),
             ],
           ),
         ),
