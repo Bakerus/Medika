@@ -24,73 +24,75 @@ class DrMEETtView extends GetView<DrMeetController> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: Appcolors.redPrimary,
-                borderRadius: BorderRadius.circular(8.0)),
-            height: 15.0.hp,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Bienvenue sur Pharmax",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Outfit',
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700),
-                        ),
-                        Text(
-                          "Recherchez vos médicaments de \n traitement anti-rétroviraux",
-                          style: TextStyle(
-                              color: Color.fromRGBO(255, 255, 255, 0.71),
-                              fontFamily: 'Outfit',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                Image.asset(
-                  'assets/images/icons/drMeetLogoWhite.png',
-                  fit: BoxFit.cover,
-                  width: 18.0.wp,
-                ),
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  color: Appcolors.redPrimary,
+                  borderRadius: BorderRadius.circular(8.0)),
+              height: 15.0.hp,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Bienvenue sur Pharmax",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'Outfit',
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          Text(
+                            "Recherchez vos médicaments de \n traitement anti-rétroviraux",
+                            style: TextStyle(
+                                color: Color.fromRGBO(255, 255, 255, 0.71),
+                                fontFamily: 'Outfit',
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Image.asset(
+                    'assets/images/icons/drMeetLogoWhite.png',
+                    fit: BoxFit.cover,
+                    width: 18.0.wp,
+                  ),
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: const TextfielCustomized(
-                hintext: 'Recherche des articles,...',
-                height: 45.0,
-                inconsPrefixed: Icons.search),
-          ),
-          Expanded(
-            child: ListView(
-              children: DrMeetController.doctors
-                  .map((dr) => Doctoritem(
-                        key: ValueKey(dr.id),
-                        name: dr.name,
-                        experience: dr.experience,
-                        speciality: dr.specialty,
-                        location: dr.location,
-                      ))
-                  .toList(),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: const TextfielCustomized(
+                  hintext: 'Recherche des articles,...',
+                  height: 45.0,
+                  inconsPrefixed: Icons.search),
             ),
-          ),
-        ],
+            Expanded(
+              child: ListView(
+                children: DrMeetController.doctors
+                    .map((dr) => Doctoritem(
+                          key: ValueKey(dr.id),
+                          name: dr.name,
+                          experience: dr.experience,
+                          speciality: dr.specialty,
+                          location: dr.location,
+                        ))
+                    .toList(),
+              ),
+            ),
+          ],
+        ),
       ),
 
       bottomNavigationBar: BottomAppBarCustomized(),

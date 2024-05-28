@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/utils/extensions.dart';
+import 'package:medika/app/modules/pharmax/views/pharmax_view.dart';
 
 class CardPharmaxPharmacie extends StatelessWidget {
   final String image;
@@ -8,7 +10,7 @@ class CardPharmaxPharmacie extends StatelessWidget {
   final String date;
   const CardPharmaxPharmacie(
       {super.key,
-      required this.image,
+      this.image = "assets/icons/Hospital.png",
       required this.title,
       required this.date});
 
@@ -128,8 +130,10 @@ class CardPharmaxPharmacie extends StatelessWidget {
                   )
                 ],
               ),
-              Icon(Icons.location_on_rounded,
-                  size: 18.0.sp, color: Appcolors.redPrimary),
+              IconButton(onPressed: (){
+                Get.to(PharmaxView());
+              }, icon: Icon(Icons.location_on_rounded,
+                  size: 18.0.sp, color: Appcolors.redPrimary),) 
             ],
           ),
         ),
