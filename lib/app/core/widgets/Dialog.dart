@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/design/themes.dart';
 import 'package:medika/app/core/utils/extensions.dart';
-import 'package:medika/app/modules/home/views/home_view.dart';
 
 class DialogCustomize extends StatelessWidget {
   final String title;
@@ -59,8 +58,11 @@ class DialogCustomize extends StatelessWidget {
             SizedBox(
               width: 45.0.wp,
               height: 50,
-              child: const ElevatedButton(
-                  onPressed: null, child: Text("Vers l'accueil")),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed("/home");
+                  },
+                  child: Text("Vers l'accueil")),
             ),
           ],
         ),

@@ -202,7 +202,7 @@ class SignupProfessionnelView2 extends GetView<SignupProfessionnelController> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Get.to(DossierMedicalView());
+                        Get.toNamed("/login");
                       },
                       child: Text(
                         "Avez-vous un compte? Connectez-vous",

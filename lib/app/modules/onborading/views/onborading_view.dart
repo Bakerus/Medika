@@ -159,14 +159,17 @@ class OnboradingView extends GetView<OnboradingController> {
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                              side: BorderSide(color: Appcolors.redPrimary, )
-                            ),
+                                borderRadius: BorderRadius.circular(15.0),
+                                side: BorderSide(
+                                  color: Appcolors.redPrimary,
+                                )),
                           ),
                           backgroundColor:
                               MaterialStateProperty.all<Color>(Colors.white),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed("/signup-professionnel");
+                        },
                         child: const Text(
                           "Inscription",
                           style: TextStyle(color: Appcolors.redPrimary),
