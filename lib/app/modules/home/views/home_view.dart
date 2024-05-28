@@ -138,13 +138,46 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ],
                 ),
-                FutureBuilder(
-                  future: doctorProvider.fetchDoctors(),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      // Access the fetched data
-                      // Use 'data' in your widget logic
-                      return SizedBox(
+                doctorProvider.doctors.isEmpty
+                    ? FutureBuilder(
+                        future: doctorProvider.fetchDoctors(),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+                            // Access the fetched data
+                            // Use 'data' in your widget logic
+                            return SizedBox(
+                              height: 180,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: doctorProvider.doctors
+                                    .map((dr) => GestureDetector(
+                                          onTap: () {
+                                            Get.toNamed("/drmeet/detail",
+                                                arguments: dr.id);
+                                          },
+                                          child: CardCustomizedMedecins(
+                                            key: ValueKey(dr.id),
+                                            image: dr.imageUrl,
+                                            doctorName: dr.name,
+                                            doctorSpeciality: dr.specialty,
+                                            localisation: dr.location,
+                                          ),
+                                        ))
+                                    .toList(),
+                              ),
+                            ); // Example: Display the fetched data
+                          } else if (snapshot.hasError) {
+                            return Center(
+                                child: Text(
+                                    'Error: ${snapshot.error}')); // Show error message
+                          } else {
+                            return const Center(
+                                child:
+                                    CircularProgressIndicator()); // Show loading indicator
+                          }
+                        },
+                      )
+                    : SizedBox(
                         height: 180,
                         child: ListView(
                           scrollDirection: Axis.horizontal,
@@ -164,18 +197,7 @@ class HomeView extends GetView<HomeController> {
                                   ))
                               .toList(),
                         ),
-                      ); // Example: Display the fetched data
-                    } else if (snapshot.hasError) {
-                      return Center(
-                          child: Text(
-                              'Error: ${snapshot.error}')); // Show error message
-                    } else {
-                      return const Center(
-                          child:
-                              CircularProgressIndicator()); // Show loading indicator
-                    }
-                  },
-                ),
+                      ),
               ],
             ),
           ),
