@@ -9,7 +9,7 @@ import 'package:medika/app/core/widgets/cardPharmax.dart';
 import 'package:medika/app/core/widgets/cardPharmaxPharmacie.dart';
 import 'package:medika/app/core/widgets/textfield.dart';
 import 'package:medika/app/modules/pharmax/controllers/pharmax_controller.dart';
-import 'package:medika/app/modules/pharmax/views/Pharmax_viewall.dart';
+import 'package:medika/app/modules/pharmax/views/Pharmax_viewAll.dart';
 
 class PharmaXPrincipal extends GetView<PharmaxController> {
   const PharmaXPrincipal({Key? key}) : super(key: key);
@@ -110,7 +110,7 @@ class PharmaXPrincipal extends GetView<PharmaxController> {
                             ),
                             GestureDetector(
                               onTap: () {
-                                Get.to(PharmaXAll());
+                                Get.to(const PharmaXAll());
                               },
                               child: Text(
                                 "Tout voir",
