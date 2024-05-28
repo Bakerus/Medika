@@ -107,7 +107,6 @@ class DocumentDialog extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(55),
                           ),
-                          primary: Appcolors.redPrimary,
                         ),
                         onPressed: () {
                           controller.addDocument(Document(
