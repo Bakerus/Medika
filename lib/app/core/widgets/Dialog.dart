@@ -3,13 +3,18 @@ import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/design/themes.dart';
 import 'package:medika/app/core/utils/extensions.dart';
-import 'package:medika/app/modules/home/views/home_view.dart';
 
 class DialogCustomize extends StatelessWidget {
   final String title;
   final String describe;
-  const DialogCustomize(
-      {super.key, required this.title, required this.describe});
+  final String buttonName;
+
+  const DialogCustomize({
+    Key? key,
+    required this.title,
+    required this.describe,
+    required this.buttonName,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +32,7 @@ class DialogCustomize extends StatelessWidget {
               child: Icon(
                 Icons.check,
                 color: Appcolors.redPrimary,
-                size: 40.0.sp,
+                size: 35.0.sp,
               ),
             ),
             SizedBox(
@@ -36,10 +41,11 @@ class DialogCustomize extends StatelessWidget {
                   Text(
                     title,
                     style: const TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w900,
-                        color: Appcolors.blackPrimary),
+                      fontFamily: 'Outfit',
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w900,
+                      color: Appcolors.blackPrimary,
+                    ),
                   ),
                   Text(
                     describe,
@@ -51,10 +57,12 @@ class DialogCustomize extends StatelessWidget {
             ),
             SizedBox(
               width: 45.0.wp,
-              height: 6.0.hp,
-              child:  ElevatedButton(onPressed: () {
-                Get.to(const HomeView());
-              }, child: Text("Vers l'accueil")),
+              height: 50,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed("/home");
+                  },
+                  child: Text("Vers l'accueil")),
             ),
           ],
         ),

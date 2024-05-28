@@ -8,7 +8,12 @@ class CardCustomizedMedecins extends StatelessWidget {
   final String doctorName;
   final String doctorSpeciality;
   final String localisation;
-  const CardCustomizedMedecins({super.key, required this.image, required this.doctorName, required this.doctorSpeciality, required this.localisation});
+  const CardCustomizedMedecins(
+      {super.key,
+      required this.image,
+      required this.doctorName,
+      required this.doctorSpeciality,
+      required this.localisation});
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +27,7 @@ class CardCustomizedMedecins extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CircleAvatar(
-                radius: 42,
-                backgroundImage: AssetImage(image)),
+            CircleAvatar(radius: 42, backgroundImage: NetworkImage(image)),
             SizedBox(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,7 +51,7 @@ class CardCustomizedMedecins extends StatelessWidget {
                   Icons.place,
                   color: Appcolors.redPrimary,
                 ),
-                Text(localisation ,
+                Text(localisation,
                     style: AppTheme.lightTheme.textTheme.labelSmall!.copyWith(
                         color: Appcolors.redPrimary,
                         fontSize: 8,

@@ -34,23 +34,22 @@ class PharmaXAll extends GetView<PharmaxController> {
       body: SizedBox(
         height: 100.0.hp,
         child: Column(
-          
           children: [
             Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: const TextfielCustomized(
-                          hintext: 'Recherche des articles,...',
-                          height: 45.0,
-                          inconsPrefixed: Icons.search),
-                    ),
+              padding: const EdgeInsets.all(8.0),
+              child: const TextfielCustomized(
+                  hintext: 'Recherche des articles,...',
+                  height: 45.0,
+                  inconsPrefixed: Icons.search),
+            ),
             SizedBox(
               height: 70.0.hp,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12.0, vertical: 8.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [

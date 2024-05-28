@@ -1,23 +1,37 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:medika/app/core/utils/extensions.dart';
 import 'package:medika/app/core/widgets/bottomBar.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/design/colors.dart';
+import '../../../core/widgets/Dialog.dart';
+import '../../../data/providers/treatmentProvider.dart';
 import '../controllers/traitement_controller.dart';
 
 class AjouterTraitementView extends GetView<TraitementController> {
-  const AjouterTraitementView({Key? key}) : super(key: key);
+  AjouterTraitementView({Key? key}) : super(key: key);
+
+  final _titleTreat = TextEditingController();
+  final _doctorTreat = TextEditingController();
+  final _medcineTreat = TextEditingController();
+  final _dosageTreat = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final treatmentProvider = Provider.of<TreatmentProvider>(context);
+
+    void onAddClicked() {
+      treatmentProvider.addToTreatments(_titleTreat.text, _doctorTreat.text,
+          _medcineTreat.text, _dosageTreat.text);
+      controller.increment();
+    }
+
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text("Traitement à suivre"),
+        title: const Text("Traitement à suivre"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -25,6 +39,7 @@ class AjouterTraitementView extends GetView<TraitementController> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: _titleTreat,
                 decoration: InputDecoration(
                     filled: true,
                     border: OutlineInputBorder(
@@ -37,6 +52,7 @@ class AjouterTraitementView extends GetView<TraitementController> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: _doctorTreat,
                 decoration: InputDecoration(
                     filled: true,
                     border: OutlineInputBorder(
@@ -65,28 +81,23 @@ class AjouterTraitementView extends GetView<TraitementController> {
                 ],
               ),
             ),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.add_box_rounded,
-                  size: 30,
-                  color: Theme.of(context).colorScheme.onPrimary,
-                )),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: _medcineTreat,
                 decoration: InputDecoration(
                     filled: true,
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(24.0),
                         borderSide: BorderSide.none),
                     fillColor: Appcolors.greyTextfield,
-                    hintText: "Nom du medecin"),
+                    hintText: "Nom du medicament"),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                controller: _dosageTreat,
                 decoration: InputDecoration(
                     filled: true,
                     border: OutlineInputBorder(
@@ -213,7 +224,18 @@ class AjouterTraitementView extends GetView<TraitementController> {
               child: SizedBox(
                 width: 100.0.wp,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      onAddClicked();
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return const DialogCustomize(
+                              title: 'Bravo',
+                              describe: 'Votre traitement a bin été ajouté',
+                              buttonName: 'ok',
+                            );
+                          });
+                    },
                     child: const Text("Enregistrer le traitement")),
               ),
             )

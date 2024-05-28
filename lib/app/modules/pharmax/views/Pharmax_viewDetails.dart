@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/utils/extensions.dart';
-import 'package:medika/app/core/widgets/bottomBar.dart';
 
 class PharmaX_viewDetails extends StatelessWidget {
   const PharmaX_viewDetails({super.key});

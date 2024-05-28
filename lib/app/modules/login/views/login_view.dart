@@ -26,7 +26,7 @@ class LoginView extends GetView<LoginController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                 Icon(
+                Icon(
                   Icons.person,
                   size: 90.0.sp,
                   color: Appcolors.redPrimary,
@@ -34,7 +34,7 @@ class LoginView extends GetView<LoginController> {
                 SizedBox(
                   height: 25.0.hp,
                   child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround ,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       TextfielCustomized(
                           hintext: 'Entrez votre email',
@@ -51,7 +51,7 @@ class LoginView extends GetView<LoginController> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.only(top:5.0),
+                                  padding: EdgeInsets.only(top: 5.0),
                                   child: Text(
                                     'Mot de passe oublié',
                                     style: TextStyle(
@@ -69,24 +69,28 @@ class LoginView extends GetView<LoginController> {
                     ],
                   ),
                 ),
-               
                 SizedBox(
                     height: 15.0.hp,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                         SizedBox(
+                        SizedBox(
                           width: double.infinity,
                           height: 55,
                           child: ElevatedButton(
-                              onPressed: (){
+                              onPressed: () {
                                 showDialog(
-                                  context: context,
-                                  builder:(BuildContext context){
-                                    return DialogCustomize(title: 'Bravo Bienvenue', describe: 'Vous vous etes connectés avec succés à wesero+');
-                                  }
-                                );
-                              }, child: Text("Connexion")),
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return DialogCustomize(
+                                        title: 'Bravo Bienvenue',
+                                        describe:
+                                            'Vous vous etes connectés avec succés à wesero+',
+                                        buttonName: 'Se connecter',
+                                      );
+                                    });
+                              },
+                              child: Text("Connexion")),
                         ),
                         Text(
                           "Pas de compte ?, S'inscrire",
