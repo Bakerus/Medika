@@ -5,7 +5,6 @@ import 'package:intl/intl.dart';
 import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/utils/extensions.dart';
 
-import '../../../core/widgets/Dialog.dart';
 import '../controllers/drMeet_controller.dart';
 
 class DrMeetDetail extends GetView<DrMeetController> {

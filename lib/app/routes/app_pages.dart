@@ -14,14 +14,12 @@ import '../modules/login/views/login_view.dart';
 import '../modules/onborading/bindings/onborading_binding.dart';
 import '../modules/onborading/views/onborading_view.dart';
 import '../modules/pharmax/bindings/pharmax_binding.dart';
-import '../modules/pharmax/views/pharmax_view.dart';
 import '../modules/signupPatient/bindings/signup_patient_binding.dart';
 import '../modules/signupPatient/views/signup_patient_view.dart';
 import '../modules/signupProfessionnel/bindings/signup_professionnel_binding.dart';
 import '../modules/signupProfessionnel/views/signup_professionnel_view.dart';
 import '../modules/traitement/bindings/traitement_binding.dart';
 import '../modules/traitement/views/traitement_view.dart';
-import '../modules/traitement/views/traitement_à_suivre.dart';
 
 part 'app_routes.dart';
 
@@ -78,7 +76,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.EDUKATE,
-      page: () => const EdukateView(),
+      page: () =>  EdukateView(),
       binding: EdukateBinding(),
     ),
     GetPage(

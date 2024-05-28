@@ -11,6 +11,7 @@ class PharmaxView extends GetView<PharmaxController> {
   const PharmaxView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(PharmaxController());
     return Scaffold(
       appBar: AppBar(
         leading: const IconButton(
@@ -27,23 +28,32 @@ class PharmaxView extends GetView<PharmaxController> {
               ))
         ],
       ),
-      body: Stack( children: [
-        GoogleMap(
-          mapType: MapType.normal,
-          initialCameraPosition: controller.cameraPosition.value,
-          onMapCreated: (GoogleMapController googleMapController) {
-            controller.mapController.value.complete(googleMapController);
-          },
-        ),
-        Container(
-                  margin: EdgeInsets.all(8),
-                  child: const TextfielCustomized(
-                      height: 50.0,
-                      hintext: 'Search pharmacie...',
-                      inconsPrefixed: Icons.search),
+      body: Obx(
+        () => Stack(children: [
+          ((controller.stateCurrentLocation.value == true))
+              ? GoogleMap(
+                  zoomControlsEnabled: false,
+                  mapType: MapType.normal,
+                  markers: controller.globalMarker,
+                  initialCameraPosition: controller.cameraPosition.value,
+                  onMapCreated: (GoogleMapController googleMapController) {
+                    controller.mapController.value
+                        .complete(googleMapController);
+                  },
+                )
+              : const Center(
+                  child: CircularProgressIndicator(
+                      color: Appcolors.redPrimary, strokeWidth: 5.0),
                 ),
-
-      ]),
+          Container(
+            margin: EdgeInsets.all(8),
+            child: const TextfielCustomized(
+                height: 50.0,
+                hintext: 'Search pharmacie...',
+                inconsPrefixed: Icons.search),
+          ),
+        ]),
+      ),
     );
   }
 }

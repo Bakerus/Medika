@@ -69,7 +69,7 @@ class HomeView extends GetView<HomeController> {
                 const TextfielCustomized(
                     hintext: 'Recherche de médecin, medicaments, articles,...',
                     inconsPrefixed: Icons.search),
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     CardCustomized(moduleName: 'DrMeet', moduleImage: "assets/icons/Doctor.png", page: DrMEETtView(),),
@@ -78,7 +78,7 @@ class HomeView extends GetView<HomeController> {
                     CardCustomized(moduleName: 'Care+', moduleImage: "assets/icons/Care.png", page: EdukateView(),),
                   ],
                 ),
-                const OthersModules(
+                 OthersModules(
                   desription:
                       "Informez vous sur les \n maladies autour de vous",
                   image: 'assets/images/Group.png',
@@ -86,7 +86,7 @@ class HomeView extends GetView<HomeController> {
                   bouttonColor: Appcolors.redPrimary,
                   textbutton: 'Acceder à Edukate',
                   colorText: Appcolors.blackPrimary,
-                  page: EdukateView(),
+                  page:  EdukateView(),
                 ),
                 const OthersModules(
                   desription: "Des médecins prêts à vous\n suivre à distance",

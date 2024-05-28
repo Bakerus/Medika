@@ -9,13 +9,19 @@ import 'package:medika/app/core/utils/extensions.dart';
 import 'package:medika/app/core/widgets/bottomBar.dart';
 import 'package:medika/app/core/widgets/cardEdukate.dart';
 import 'package:medika/app/core/widgets/textfield.dart';
+import 'package:medika/app/data/models/articles.dart';
+import 'package:medika/app/modules/Edukate/views/edukate_viewAll.dart';
 
 import '../controllers/edukate_controller.dart';
 
 class EdukateView extends GetView<EdukateController> {
-  const EdukateView({Key? key}) : super(key: key);
+  final controller = Get.put(EdukateController());
+  var selecteList;
+
+  EdukateView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final EdukateController controller = Get.put(EdukateController());
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edukate'),
@@ -106,65 +112,103 @@ class EdukateView extends GetView<EdukateController> {
                                   fontSize: 16,
                                   fontWeight: FontWeight.w700),
                             ),
-                            Text(
-                              "Tout voir",
-                              style: AppTheme.lightTheme.textTheme.labelMedium!
-                                  .copyWith(color: Appcolors.redPrimary),
+                            GestureDetector(
+                              onTap: () {
+                                 Get.to(Edukate_ViewAll(
+                                  title: Text(
+                                    "Articles sur la santé",
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                  list: controller.articleListsGeneral,
+                                ));
+                              },
+                              child: Text(
+                                "Tout voir",
+                                style: AppTheme
+                                    .lightTheme.textTheme.labelMedium!
+                                    .copyWith(color: Appcolors.redPrimary),
+                              ),
                             ),
                           ],
                         ),
                         SizedBox(
-                          height: 30.0.hp,
-                          child: Column(
-                            children: [
-                              CardEdukate(
-                                image: "assets/images/Soue.jpg",
-                                title:
-                                    "Le paludisme en Afrique : Tout ce qu’il faut \n savoir sur la maladie",
-                                date: "Le 10 juin 2021 + Dr. Evans",
-                              ),
-                              CardEdukate(
-                                image: "assets/images/Soue.jpg",
-                                title:
-                                    "Le paludisme en Afrique : Tout ce qu’il faut \n savoir sur la maladie",
-                                date: "Le 10 juin 2021 + Dr. Evans",
-                              ),
-                            ],
-                          ),
-                        ),
+                            height: 30.0.hp,
+                            child: Obx(() {
+                              if (controller.articleListsGeneral.isEmpty) {
+                                return const Center(
+                                     child: CircularProgressIndicator(
+                                  color: Appcolors.redOpacity,
+                                ));
+                              } else {
+                                return ListView.builder(
+                                  itemCount: 2,
+                                  itemBuilder: (context, index) {
+                                    return CardEdukate(
+                                      image: controller
+                                          .articleListsGeneral[index].image,
+                                      title: controller
+                                          .articleListsGeneral[index].titre,
+                                      date: controller
+                                          .articleListsGeneral[index].date,
+                                    );
+                                  },
+                                );
+                              }
+                            })),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             const Text(
-                              "Articles sur la santés",
+                              "Articles sur la santé",
                               style: TextStyle(
                                   color: Appcolors.blackPrimary,
                                   fontFamily: 'Outfit',
                                   fontSize: 16,
                                   fontWeight: FontWeight.w700),
                             ),
-                            Text(
-                              "Tout voir",
-                              style: AppTheme.lightTheme.textTheme.labelMedium!
-                                  .copyWith(color: Appcolors.redPrimary),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(Edukate_ViewAll(
+                                  title: Text(
+                                    "Les maladies autour de vous",
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                  list: controller.articleListsVIH,
+                                ));
+                              },
+                              child: Text(
+                                "Tout voir",
+                                style: AppTheme
+                                    .lightTheme.textTheme.labelMedium!
+                                    .copyWith(color: Appcolors.redPrimary),
+                              ),
                             ),
                           ],
                         ),
                         SizedBox(
-                          height: 12.0.hp,
-                          child: CardEdukate(
-                            image: "assets/images/Soue.jpg",
-                            title:
-                                "Le paludisme en Afrique : Tout ce qu’il faut \n savoir sur la maladie",
-                            date: "Le 10 juin 2021 + Dr. Evans",
-                          ),
-                        ),
-                        CardEdukate(
-                          image: "assets/images/Soue.jpg",
-                          title:
-                              "Le paludisme en Afrique : Tout ce qu’il faut \n savoir sur la maladie",
-                          date: "Le 10 juin 2021 + Dr. Evans",
-                        ),
+                            height: 12.0.hp,
+                            child: Obx(() {
+                              if (controller.articleListsVIH.isEmpty) {
+                                return Center(
+                                    child: CircularProgressIndicator(
+                                  color: Appcolors.redOpacity,
+                                ));
+                              } else {
+                                return ListView.builder(
+                                  itemCount: 2,
+                                  itemBuilder: (context, index) {
+                                    return CardEdukate(
+                                      image: controller
+                                          .articleListsVIH[index].image,
+                                      title: controller
+                                          .articleListsVIH[index].titre,
+                                      date: controller
+                                          .articleListsVIH[index].date,
+                                    );
+                                  },
+                                );
+                              }
+                            })),
                       ],
                     ),
                   ),
