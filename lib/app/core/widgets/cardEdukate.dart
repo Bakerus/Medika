@@ -34,7 +34,7 @@ class CardEdukate extends StatelessWidget {
                     ),
                     child: Container(
                         margin: EdgeInsets.symmetric(horizontal: 10),
-                        child: Image.asset(
+                        child: Image.network(
                           image,
                           width: 20.0.wp,
                         )))),

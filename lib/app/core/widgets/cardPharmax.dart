@@ -6,11 +6,13 @@ class CardPharmax extends StatelessWidget {
   final String image;
   final String title;
   final String date;
+  final String prix;
   const CardPharmax(
       {super.key,
       required this.image,
       required this.title,
-      required this.date});
+      required this.date,
+      this.prix = "1500"});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class CardPharmax extends StatelessWidget {
                         bottomLeft: Radius.circular(10),
                         bottomRight: Radius.circular(10),
                       ),
-                      child: Image.asset(image))),
+                      child: Image.network(image))),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -88,7 +90,7 @@ class CardPharmax extends StatelessWidget {
                   )
                 ],
               ),
-              Text("1500 FCFA",
+              Text(prix,
                   style: TextStyle(
                     color: Appcolors.blackPrimary,
                     fontSize: 14,

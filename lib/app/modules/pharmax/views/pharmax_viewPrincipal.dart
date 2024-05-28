@@ -17,6 +17,7 @@ class PharmaXPrincipal extends GetView<PharmaxController> {
 
   @override
   Widget build(BuildContext context) {
+    final PharmaxController controller = Get.put(PharmaxController());
     return Scaffold(
       appBar: AppBar(
         leading: const IconButton(
@@ -124,20 +125,33 @@ class PharmaXPrincipal extends GetView<PharmaxController> {
                         ),
                         SizedBox(
                           height: 30.0.hp,
-                          child: Column(
-                            children: [
-                              CardPharmax(
-                                image: "assets/images/Soue.jpg",
-                                title: "Nom du médicament",
-                                date: "Grammage",
-                              ),
-                              CardPharmax(
-                                image: "assets/images/Soue.jpg",
-                                title: "Nom du médicament",
-                                date: "Grammage",
-                              ),
-                            ],
-                          ),
+                          child: Obx(() {
+                            if (controller.medicamentsLists.isEmpty) {
+                              return const Center(
+                                child: CircularProgressIndicator(
+                                  color: Appcolors.redOpacity,
+                                ),
+                              );
+                            } else {
+                              return ListView.builder(
+                                itemCount: 2,
+                                itemBuilder: (context, index) {
+                                  print(
+                                      "${controller.medicamentsLists[index].imageUrl}");
+                                  return CardPharmax(
+                                    image: controller
+                                        .medicamentsLists[index].imageUrl,
+                                    title:
+                                        controller.medicamentsLists[index].nom,
+                                    date: controller
+                                        .medicamentsLists[index].grammage,
+                                    prix:
+                                        controller.medicamentsLists[index].prix,
+                                  );
+                                },
+                              );
+                            }
+                          }),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -159,16 +173,26 @@ class PharmaXPrincipal extends GetView<PharmaxController> {
                         ),
                         SizedBox(
                           height: 12.0.hp,
-                          child: CardPharmaxPharmacie(
-                            image: "assets/images/Soue.jpg",
-                            title: "Nom de la pharmacie",
-                            date: "Centre ville - sangmelima",
-                          ),
-                        ),
-                        CardPharmaxPharmacie(
-                          image: "assets/images/Soue.jpg",
-                          title: "Nom de la pharmacie",
-                          date: "Centre ville - sangmelima",
+                          child: Obx(() {
+                            if (controller.pharmacieLists.isEmpty) {
+                              return const Center(
+                                child: CircularProgressIndicator(
+                                  color: Appcolors.redOpacity,
+                                ),
+                              );
+                            } else {
+                              return ListView.builder(
+                                itemCount: 2,
+                                itemBuilder: (context, index) {
+                                  return CardPharmaxPharmacie(
+                                    title: controller.pharmacieLists[index].nom,
+                                    date:
+                                        controller.pharmacieLists[index].quartier,
+                                  );
+                                },
+                              );
+                            }
+                          }),
                         ),
                       ],
                     ),

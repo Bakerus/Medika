@@ -26,7 +26,7 @@ class CardCustomized extends StatelessWidget {
                     height: 8.5.hp,
                     child: GestureDetector(
                       onTap: () {
-                        Get.to(page);
+                        Get.to(() => page);
                       },
                       child: Card(
                         elevation: 1.0,
