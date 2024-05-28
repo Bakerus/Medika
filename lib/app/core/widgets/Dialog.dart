@@ -52,9 +52,11 @@ class DialogCustomize extends StatelessWidget {
             SizedBox(
               width: 45.0.wp,
               height: 6.0.hp,
-              child:  ElevatedButton(onPressed: () {
-                Get.to(const HomeView());
-              }, child: Text("Vers l'accueil")),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Get.offAll(const HomeView());
+                  },
+                  child: Text("Vers l'accueil")),
             ),
           ],
         ),
