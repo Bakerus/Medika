@@ -230,7 +230,7 @@ class AjouterTraitementView extends GetView<TraitementController> {
                           context: context,
                           builder: (BuildContext context) {
                             return const DialogCustomize(
-                                title: 'Bravo',
+                              title: 'Bravo',
                               describe: 'Votre traitement a bin été ajouté',
                               buttonName: 'ok',
                             );

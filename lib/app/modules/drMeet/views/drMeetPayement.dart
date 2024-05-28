@@ -255,7 +255,10 @@ class DrMeetPayement extends GetView<DrMeetController> {
                             context: context,
                             builder: (BuildContext context) {
                               return const DialogCustomize(
-                                  title: 'Réservation réussi', describe: '');
+                                title: 'Réservation réussi',
+                                describe: '',
+                                buttonName: 'Ok',
+                              );
                             });
                       },
                       child: const Text("Réserver")),
