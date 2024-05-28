@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:medika/app/core/utils/extensions.dart';
 
 class OthersModules extends StatelessWidget {
@@ -8,6 +9,7 @@ class OthersModules extends StatelessWidget {
   final Color bouttonColor;
   final Color colorText;
   final String textbutton;
+  final Widget page;
   const OthersModules(
       {super.key,
       required this.desription,
@@ -15,7 +17,8 @@ class OthersModules extends StatelessWidget {
       required this.backgroundColor,
       required this.colorText,
       required this.bouttonColor,
-      required this.textbutton});
+      required this.textbutton,
+      required this.page});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class OthersModules extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
       decoration: BoxDecoration(
           color: backgroundColor, borderRadius: BorderRadius.circular(8.0)),
-      height: 18.0.hp,
+      height: 16.0.hp,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -60,7 +63,9 @@ class OthersModules extends StatelessWidget {
                             borderRadius: BorderRadius.circular(25.0),
                           ),
                         )),
-                    onPressed: null,
+                    onPressed: () {
+                      Get.to(page);
+                    },
                     child: Text(textbutton)),
               )
             ],

@@ -6,7 +6,11 @@ environment:
   sdk: '>=3.2.6 <4.0.0'
 
 dependencies: 
+  provider: ^6.0.0 
+  table_calendar: ^3.0.6
+  intl: ^0.19.0
   cupertino_icons: ^1.0.6
+  http: ^1.2.1 
   get: 4.6.6
   flutter: 
     sdk: flutter
@@ -19,7 +23,7 @@ dependencies:
   phonenumbers: ^1.0.0
 
 dev_dependencies: 
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
   flutter_test: 
     sdk: flutter
 
@@ -27,13 +31,27 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/Group.png
+    - assets/images/Group_2.png
     - assets/images/Frame.png
     - assets/images/Soue.jpg
     - assets/icons/Care.png
     - assets/icons/Doctor.png
     - assets/icons/Hospital.png
     - assets/icons/Pharmacy.png
-    
+    - assets/images/icons/logo.png
+    - assets/images/icons/therapyLogoWhite.png
+    - assets/images/icons/om.png
+    - assets/images/icons/drMeetLogoWhite.png
+    - assets/images/icons/profilePhoto.png
+    - assets/images/icons/pharmax.png
+    - assets/images/doctor.png
+    - assets/images/onBoard1.png
+    - assets/images/onBoard2.png
+    - assets/images/onBoard3.png
+    - assets/images/onBoard4.png
+    - assets/images/onBoard5.png
+    - assets/images/onBoard6.png
+    - assets/images/onBoard6.png
 
   fonts:
     - family: Outfit

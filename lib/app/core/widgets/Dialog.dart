@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/design/themes.dart';
 import 'package:medika/app/core/utils/extensions.dart';
+import 'package:medika/app/modules/home/views/home_view.dart';
 
 class DialogCustomize extends StatelessWidget {
   final String title;
@@ -18,15 +20,16 @@ class DialogCustomize extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.white,
+      surfaceTintColor: Colors.white,
       content: SizedBox(
         height: 40.0.hp,
+        width: 80.0.wp,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             CircleAvatar(
-              backgroundColor: Appcolors.redbackgound,
-              radius: 40.0,
+              backgroundColor: const Color.fromRGBO(245, 248, 255, 1),
+              radius: 30.0.sp,
               child: Icon(
                 Icons.check,
                 color: Appcolors.redPrimary,
@@ -56,12 +59,8 @@ class DialogCustomize extends StatelessWidget {
             SizedBox(
               width: 45.0.wp,
               height: 50,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: Text(buttonName),
-              ),
+              child: const ElevatedButton(
+                  onPressed: null, child: Text("Vers l'accueil")),
             ),
           ],
         ),
