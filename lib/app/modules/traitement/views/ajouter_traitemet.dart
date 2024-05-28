@@ -231,7 +231,9 @@ class AjouterTraitementView extends GetView<TraitementController> {
                           builder: (BuildContext context) {
                             return const DialogCustomize(
                                 title: 'Bravo',
-                                describe: 'Votre traitement a bin été ajouté');
+                              describe: 'Votre traitement a bin été ajouté',
+                              buttonName: 'ok',
+                            );
                           });
                     },
                     child: const Text("Enregistrer le traitement")),
