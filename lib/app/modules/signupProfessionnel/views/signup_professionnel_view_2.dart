@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/design/themes.dart';
 import 'package:medika/app/core/utils/extensions.dart';
-import '../../login/views/login_view.dart';
+
+import 'package:medika/app/modules/DossierMedical/Views/dossier_medical_view.dart';
+
 import '../controllers/signup_professionnel_controller.dart';
 import '../../../core/widgets/date_picker_button.dart.dart';
 import '../../../core/widgets/file_picker.dart';
@@ -189,16 +191,18 @@ class SignupProfessionnelView2 extends GetView<SignupProfessionnelController> {
                                 context: context,
                                 builder: (BuildContext context) {
                                   return DialogCustomize(
-                                      title: 'Bravo!',
-                                      describe:
-                                          'Votre compte a bien été enregistré');
+                                    title: 'Bravo!',
+                                    describe:
+                                        'Votre compte a bien été enregistré',
+                                    buttonName: 'Se connecter',
+                                  );
                                 });
                           },
                           child: Text("Se connecter")),
                     ),
                     GestureDetector(
                       onTap: () {
-                        Get.to(LoginView());
+                        Get.to(DossierMedicalView());
                       },
                       child: Text(
                         "Avez-vous un compte? Connectez-vous",

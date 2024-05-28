@@ -104,9 +104,11 @@ class SignupPatientView extends GetView<SignupPatientController> {
                                 context: context,
                                 builder: (BuildContext context) {
                                   return DialogCustomize(
-                                      title: 'Inscription reussie!',
-                                      describe:
-                                          'Vous serez notifié de la validation de \n  votre compte sur WeSero+');
+                                    title: 'Inscription reussie!',
+                                    describe:
+                                        'Vous serez notifié de la validation de \n  votre compte sur WeSero+',
+                                    buttonName: 'Se connecter',
+                                  );
                                 });
                           },
                           child: Text("Se connecter")),

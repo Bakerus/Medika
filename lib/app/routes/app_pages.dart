@@ -12,7 +12,6 @@ import '../modules/signupPatient/bindings/signup_patient_binding.dart';
 import '../modules/signupPatient/views/signup_patient_view.dart';
 import '../modules/signupProfessionnel/bindings/signup_professionnel_binding.dart';
 import '../modules/signupProfessionnel/views/signup_professionnel_view.dart';
-import '../modules/signupProfessionnel/views/signup_professionnel_view_2.dart';
 
 part 'app_routes.dart';
 

@@ -6,8 +6,14 @@ import 'package:medika/app/core/utils/extensions.dart';
 class DialogCustomize extends StatelessWidget {
   final String title;
   final String describe;
-  const DialogCustomize(
-      {super.key, required this.title, required this.describe});
+  final String buttonName;
+
+  const DialogCustomize({
+    Key? key,
+    required this.title,
+    required this.describe,
+    required this.buttonName,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +25,12 @@ class DialogCustomize extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             CircleAvatar(
-              backgroundColor: const Color.fromRGBO(245, 248, 255, 1),
-              radius: 30.0,
+              backgroundColor: Appcolors.redbackgound,
+              radius: 40.0,
               child: Icon(
                 Icons.check,
                 color: Appcolors.redPrimary,
-                size: 40.0.sp,
+                size: 35.0.sp,
               ),
             ),
             SizedBox(
@@ -33,10 +39,11 @@ class DialogCustomize extends StatelessWidget {
                   Text(
                     title,
                     style: const TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w900,
-                        color: Appcolors.blackPrimary),
+                      fontFamily: 'Outfit',
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w900,
+                      color: Appcolors.blackPrimary,
+                    ),
                   ),
                   Text(
                     describe,
@@ -49,8 +56,12 @@ class DialogCustomize extends StatelessWidget {
             SizedBox(
               width: 45.0.wp,
               height: 50,
-              child: const ElevatedButton(
-                  onPressed: null, child: Text("Se connecter")),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text(buttonName),
+              ),
             ),
           ],
         ),

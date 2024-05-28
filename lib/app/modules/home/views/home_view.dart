@@ -65,17 +65,28 @@ class HomeView extends GetView<HomeController> {
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    CardCustomized(moduleName: 'DrMeet', moduleImage: "assets/icons/Doctor.png"),
-                    CardCustomized(moduleName: 'Pharmax', moduleImage: "assets/icons/Pharmacy.png",),
-                    CardCustomized(moduleName: 'hospital', moduleImage: "assets/icons/Hospital.png",),
-                    CardCustomized(moduleName: 'Care+', moduleImage: "assets/icons/Care.png",),
+                    CardCustomized(
+                        moduleName: 'DrMeet',
+                        moduleImage: "assets/icons/Doctor.png"),
+                    CardCustomized(
+                      moduleName: 'Pharmax',
+                      moduleImage: "assets/icons/Pharmacy.png",
+                    ),
+                    CardCustomized(
+                      moduleName: 'hospital',
+                      moduleImage: "assets/icons/Hospital.png",
+                    ),
+                    CardCustomized(
+                      moduleName: 'Care+',
+                      moduleImage: "assets/icons/Care.png",
+                    ),
                   ],
                 ),
                 const OthersModules(
                   desription:
-                      "Informez vous sur les \n maladies autour de vous",
+                      "Informez-vous sur les \n maladies autour de vous",
                   image: 'assets/images/Group.png',
-                  backgroundColor: Appcolors.redOpacity,
+                  backgroundColor: Appcolors.redbackgound,
                   bouttonColor: Appcolors.redPrimary,
                   textbutton: 'Acceder à Edukate',
                   colorText: Appcolors.blackPrimary,
@@ -180,7 +191,7 @@ class HomeView extends GetView<HomeController> {
                     Icon(Icons.mail,
                         color: controller.selectedIndex == 1
                             ? Colors.white
-                            :Appcolors.greySmallText)
+                            : Appcolors.greySmallText)
                   ],
                 ),
               ),
