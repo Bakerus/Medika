@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 import 'package:get/get.dart';
 import 'package:medika/app/core/design/colors.dart';
 import 'package:medika/app/core/design/themes.dart';
@@ -21,6 +19,7 @@ import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final doctorProvider = Provider.of<DoctorProvider>(context);
@@ -139,19 +138,11 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ],
                 ),
-                FutureBuilder<String>(
+                FutureBuilder(
                   future: doctorProvider.fetchDoctors(),
                   builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return const Center(
-                          child:
-                              CircularProgressIndicator()); // Show loading indicator
-                    } else if (snapshot.hasError) {
-                      return Center(
-                          child: Text(
-                              'Error: ${snapshot.error}')); // Show error message
-                    } else {
-// Access the fetched data
+                    if (snapshot.hasData) {
+                      // Access the fetched data
                       // Use 'data' in your widget logic
                       return SizedBox(
                         height: 180,
@@ -173,7 +164,15 @@ class HomeView extends GetView<HomeController> {
                                   ))
                               .toList(),
                         ),
-                      );
+                      ); // Example: Display the fetched data
+                    } else if (snapshot.hasError) {
+                      return Center(
+                          child: Text(
+                              'Error: ${snapshot.error}')); // Show error message
+                    } else {
+                      return const Center(
+                          child:
+                              CircularProgressIndicator()); // Show loading indicator
                     }
                   },
                 ),
